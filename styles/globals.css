@@ -147,3 +147,13 @@
 .tagcloud--item:hover {
   color: #ffffff; /* text-white */
 }
+
+/* Add these rules to ensure correct scroll behavior */
+html, body {
+  height: auto;
+  overflow-y: auto;
+}
+
+main {
+  overflow: visible;
+}

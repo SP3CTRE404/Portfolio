@@ -74,7 +74,7 @@ export function AboutSection() {
                   learning. I have a strong foundation in data structures, object-oriented programming, and database
                   management systems.
                 </p>
-              </div>
+                </div>
             </div>
 
             {/* --- THIS IS THE MODIFIED LINE --- */}

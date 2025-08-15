@@ -2,7 +2,7 @@
 
 This repository contains the source code for my personal portfolio website, designed to showcase my skills, projects, and experience as a Software Developer & Engineer. Built with modern web technologies, it features a sleek dark/light theme, engaging animations, and a fully functional contact form.
 
-🚀 Live Demo
+## Live Demo
 
 Check out the live version of the portfolio: https://portfolio-plum-two-38.vercel.app/
 

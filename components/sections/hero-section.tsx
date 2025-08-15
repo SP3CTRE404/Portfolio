@@ -6,7 +6,7 @@ import { StatusIndicator } from "@/components/ui/status-indicator"
 import { TypingAnimation } from "@/components/ui/typing-animation"
 import { GlitchText } from "@/components/ui/glitch-text"
 import { useTheme } from "@/components/theme-provider"
-import { ChevronDown, Phone, Mail, Github, Linkedin } from "lucide-react"
+import { ChevronDown, Phone, Mail, FileText } from "lucide-react" 
 import { cn } from "@/lib/utils"
 
 interface HeroSectionProps {
@@ -55,18 +55,15 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <div className="animate-fade-in-up">
-          {/* Status indicator */}
           <div className="flex justify-center mb-6">
             <div className="flex items-center gap-2 px-4 py-2 glass-card rounded-full">
               <StatusIndicator status="online" />
               <span className="text-sm font-body text-muted-foreground">Available for opportunities</span>
             </div>
           </div>
-
           <h1 className="font-heading font-bold text-6xl md:text-8xl mb-6">
             <GlitchText text="Udit Aggarwal" className="gradient-text" glitchIntensity="low" />
           </h1>
-
           <div className="mb-6">
             <TypingAnimation
               text="Software Developer & Engineer"
@@ -83,7 +80,6 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
               />
             )}
           </div>
-
           {showSubtitle && (
             <div className="animate-fade-in-up">
               <TypingAnimation
@@ -95,35 +91,45 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
               />
             </div>
           )}
-
           {showDescription && (
             <div className="animate-fade-in-up">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-8">
                 <Button
                   size="lg"
-                  variant="outline"
                   onClick={() => onNavigate("projects")}
                   className={cn(
                     "font-body font-semibold hover-lift neon-border",
-                    actualTheme === "dark" && "animate-glow"
+                    actualTheme === "dark" && "animate-glow",
                   )}
                 >
                   View Projects
                 </Button>
-                <Button
+                
+                <a href="/Udit_Aggarwal_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    className={cn(
+                      "font-body font-semibold hover-lift neon-border w-full sm:w-auto",
+                      actualTheme === "dark" && "animate-glow"
+                    )}
+                  >
+                    <FileText size={18} className="mr-2" />
+                    View Resume
+                  </Button>
+                </a>
 
+                <Button
                   size="lg"
                   onClick={() => onNavigate("contact")}
                   className={cn(
                     "font-body font-semibold hover-lift neon-border",
                      actualTheme === "dark" && "animate-glow"
-                    )}
+                   )}
                 >
                   Get In Touch
                 </Button>
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm text-muted-foreground mb-8">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm text-muted-foreground">
                 <div className="flex items-center gap-2 hover:text-primary transition-colors">
                   <Phone size={16} />
                   <span>+91-8800201753</span>
@@ -133,9 +139,6 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
                   <span>uditagg2004@gmail.com</span>
                 </div>
               </div>
-
-              <div className="flex gap-4 justify-center">
-              </div>
             </div>
           )}
         </div>
@@ -144,13 +147,14 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <Button
           size="icon"
+          variant="ghost"
           onClick={() => onNavigate("about")}
           className={cn(
-                    "font-body font-semibold hover-lift neon-border",
-                     actualTheme === "dark" && "animate-glow"
-                    )}
+            "rounded-full h-12 w-12",
+            actualTheme === "dark" && "text-primary animate-bounce hover:animate-none"
+          )}
         >
-          <ChevronDown size={24} />
+          <ChevronDown size={32} />
         </Button>
       </div>
     </section>

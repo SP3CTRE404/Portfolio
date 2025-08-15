@@ -27,15 +27,13 @@ export default function Page() {
     }
   };
 
+  // 👇 THE FIX IS INSIDE THIS useEffect HOOK 👇
   useEffect(() => {
-    const sectionIds = ["home", "about", "skills", "experience", "projects", "education", "contact"];
+    const sectionIds = ["home", "about", "skills", "projects", "experience", "education", "contact"];
     
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // ✅ DEBUG LOG #1: See if the observer is firing
-          console.log("IntersectionObserver entry:", entry.target.id, "isIntersecting:", entry.isIntersecting);
-          
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
@@ -44,17 +42,24 @@ export default function Page() {
       { rootMargin: "-40% 0px -60% 0px" }
     );
 
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id);
-      // ✅ DEBUG LOG #2: Check if all sections are being found
-      console.log(`Attempting to observe section with id: "${id}"`, element);
-      if (element) observer.observe(element);
-    });
-
-    return () => {
+    // Add a small delay to ensure all section elements have rendered in the DOM
+    const timer = setTimeout(() => {
       sectionIds.forEach((id) => {
         const element = document.getElementById(id);
-        if (element) observer.unobserve(element);
+        if (element) {
+          observer.observe(element);
+        }
+      });
+    }, 100); // 100ms delay
+
+    // Cleanup function
+    return () => {
+      clearTimeout(timer);
+      sectionIds.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) {
+          observer.unobserve(element);
+        }
       });
     };
   }, []);
@@ -65,16 +70,14 @@ export default function Page() {
         activeSection={activeSection} 
         onSectionChange={handleNavigate} 
       />
-      <main className="flex flex-col min-h-screen">
-        <div className="flex-1">
-          <HeroSection onNavigate={handleNavigate} />
-          <AboutSection />
-          <SkillsSection />
-          <ExperienceSection />
-          <ProjectsSection />
-          <EducationSection />
-          <ContactSection />
-        </div>
+      <main>
+        <HeroSection onNavigate={handleNavigate} />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <EducationSection />
+        <ContactSection />
       </main>
       <ScrollToTopButton />
     </ClientOnly>

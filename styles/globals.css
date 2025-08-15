@@ -132,3 +132,18 @@
     opacity: 1;
   }
 }
+
+/* Styles for the TagCloud icons */
+.tagcloud {
+  width: 100%;
+  height: auto;
+}
+
+.tagcloud--item {
+  color: #a1a1aa; /* text-zinc-400 */
+  transition: color 0.3s ease;
+}
+
+.tagcloud--item:hover {
+  color: #ffffff; /* text-white */
+}

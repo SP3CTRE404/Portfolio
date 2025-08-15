@@ -15,7 +15,7 @@ export function HeroTerminal() {
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto rounded-xl shadow-2xl bg-gray-900/80 backdrop-blur-sm border border-primary/20">
+    <div className="w-full max-w-lg mx-auto rounded-xl shadow-2xl bg-zinc-900 neonborder backdrop-blur-sm border border-zinc-700">
       {/* Code Editor Header */}
       <div className="flex items-center p-3 border-b border-gray-700">
         <div className="h-3 w-3 rounded-full bg-red-500 mr-2"></div>

@@ -10,6 +10,7 @@ import ClientOnly from "@/components/client-only";
 // Section Components
 import { HeroSection } from "@/components/sections/hero-section";
 import { AboutSection } from "@/components/sections/about-section";
+import { SkillsSection } from "@/components/sections/skills-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { EducationSection } from "@/components/sections/education-section";
@@ -27,21 +28,26 @@ export default function Page() {
   };
 
   useEffect(() => {
-    const sectionIds = ["home", "about", "tech-stack", "experience", "projects", "education", "contact"];
+    const sectionIds = ["home", "about", "skills", "experience", "projects", "education", "contact"];
     
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          // ✅ DEBUG LOG #1: See if the observer is firing
+          console.log("IntersectionObserver entry:", entry.target.id, "isIntersecting:", entry.isIntersecting);
+          
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
         });
       },
-      { rootMargin: "-30% 0px -70% 0px" }
+      { rootMargin: "-40% 0px -60% 0px" }
     );
 
     sectionIds.forEach((id) => {
       const element = document.getElementById(id);
+      // ✅ DEBUG LOG #2: Check if all sections are being found
+      console.log(`Attempting to observe section with id: "${id}"`, element);
       if (element) observer.observe(element);
     });
 
@@ -55,23 +61,21 @@ export default function Page() {
 
   return (
     <ClientOnly>
-      {/* 👇 NAVIGATION IS NOW A SIBLING TO MAIN 👇 */}
       <Navigation 
         activeSection={activeSection} 
         onSectionChange={handleNavigate} 
       />
-
       <main className="flex flex-col min-h-screen">
         <div className="flex-1">
           <HeroSection onNavigate={handleNavigate} />
           <AboutSection />
+          <SkillsSection />
           <ExperienceSection />
           <ProjectsSection />
           <EducationSection />
           <ContactSection />
         </div>
       </main>
-      
       <ScrollToTopButton />
     </ClientOnly>
   );

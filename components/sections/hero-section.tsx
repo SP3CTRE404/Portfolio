@@ -9,14 +9,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HeroTerminal } from "@/components/ui/hero-terminal";
 
 const greetings = [
-  "Konnichiwa", // Japanese
-  "Hola",       // Spanish
-  "Bonjour",    // French
-  "Ciao",       // Italian
-  "Olá",        // Portuguese
-  "Guten Tag",  // German
-  "Ni hao",     // Chinese
-  "Namaste",    // Hindi
+  "Hello",
+  "こんにちは",
+  "Hola",   
+  "नमस्ते",
+  "Bonjour",
+  "Ciao",   
+  "你好",     
+  "Olá",     
+  "안녕하세요",
+  "Guten Tag",
+  "مرحبا",
 ];
 
 interface HeroSectionProps {

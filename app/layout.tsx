@@ -1,35 +1,26 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { DM_Sans } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
-import "./globals.css"
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-dm-sans",
-  weight: ["400", "500", "600", "700"],
-})
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Udit Aggarwal | Software Developer & Engineer",
-  description:
-    "Engineering student with experience in SAP ABAP, Android development, and machine learning. Portfolio showcasing projects in mobile app development and AI.",
-  generator: "v0.app",
-}
+  title: "Udit Aggarwal | Portfolio", // Or your title
+  description: "Personal portfolio of Udit Aggarwal", // Or your description
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={dmSans.variable} suppressHydrationWarning>
-      <body className="antialiased font-body" suppressHydrationWarning>
-        <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
-          {children}
-        </ThemeProvider>
-      </body>
+    <html lang="en">
+      <head>
+        {/* ✅ ENSURE THIS VIEWPORT META TAG IS PRESENT */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
+      <body className={inter.className}>{children}</body>
     </html>
-  )
+  );
 }

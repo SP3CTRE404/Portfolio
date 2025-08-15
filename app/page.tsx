@@ -10,8 +10,8 @@ import ClientOnly from "@/components/client-only";
 // Section Components
 import { HeroSection } from "@/components/sections/hero-section";
 import { AboutSection } from "@/components/sections/about-section";
+import { ExperienceSection } from "@/components/sections/experience-section"; 
 import { SkillsSection } from "@/components/sections/skills-section";
-import { ExperienceSection } from "@/components/sections/experience-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { EducationSection } from "@/components/sections/education-section";
 import { ContactSection } from "@/components/sections/contact-section";
@@ -29,7 +29,7 @@ export default function Page() {
 
   // 👇 THE FIX IS INSIDE THIS useEffect HOOK 👇
   useEffect(() => {
-    const sectionIds = ["home", "about", "skills", "projects", "experience", "education", "contact"];
+    const sectionIds = ["home", "about", "skills", "experience", "projects", "education", "contact"];
     
     const observer = new IntersectionObserver(
       (entries) => {
@@ -74,8 +74,8 @@ export default function Page() {
         <HeroSection onNavigate={handleNavigate} />
         <AboutSection />
         <SkillsSection />
-        <ProjectsSection />
         <ExperienceSection />
+        <ProjectsSection />
         <EducationSection />
         <ContactSection />
       </main>

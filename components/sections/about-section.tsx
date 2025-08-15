@@ -9,22 +9,30 @@ import {
   Cpu,
   Layers,
   TerminalSquare,
+  AppWindow,
+  LucideBriefcaseBusiness,
+  MonitorSmartphone,
 } from "lucide-react";
+import App from "next/app";
 
 const technicalSkills = {
-  Languages: [
+  Frontend: [
+    { name: "TypeScript", icon: Code },
+    { name: "Tailwind CSS", icon: Code },
+    { name: "XAML", icon: Code },
+  ],
+  Backend: [
     { name: "Java", icon: Code },
     { name: "C++", icon: Code },
     { name: "C#", icon: Code },
     { name: "Python", icon: Code },
-    { name: "SQL", icon: Database },
-    { name: "XAML", icon: Layers },
   ],
   "Frameworks & Tools": [
     { name: "Android SDK", icon: Smartphone },
     { name: "Jetpack Compose", icon: Smartphone },
-    { name: ".NET MAUI", icon: Smartphone },
-    { name: "Firebase", icon: Database },
+    { name: ".NET MAUI", icon: MonitorSmartphone },
+    { name: "Firebase", icon: MonitorSmartphone },
+    { name: "SQL", icon: Database },
   ],
   "ML & Data": [
     { name: "NumPy", icon: BrainCircuit },
@@ -36,16 +44,17 @@ const technicalSkills = {
     "Data Structures and Algorithms",
     "OOPS",
     "DBMS",
-    "AI",
+    "Artificial Intelligence",
     "Machine Learning",
-    "Mobile UI/UX Design",
+    "Deep Learning",
     "Large Language Models",
+    "Mobile UI/UX Design",
   ],
   "Developer Tools": [
     { name: "Git/GitHub", icon: GitMerge },
     { name: "Linux", icon: TerminalSquare },
     { name: "Visual Studio", icon: Code },
-    { name: "SAP ABAP", icon: Cpu },
+    { name: "SAP ABAP", icon: LucideBriefcaseBusiness },
   ],
 };
 
@@ -64,11 +73,6 @@ export function AboutSection() {
                   I&apos;m an engineering student with hands-on experience in SAP ABAP, Android development, and machine
                   learning. I have a strong foundation in data structures, object-oriented programming, and database
                   management systems.
-                </p>
-                <p className="text-muted-foreground">
-                  My experience spans from mobile app development using .NET MAUI to implementing deep learning models
-                  with PyTorch. I&apos;m passionate about creating efficient solutions and have worked in professional
-                  development environments.
                 </p>
               </div>
             </div>

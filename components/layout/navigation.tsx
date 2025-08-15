@@ -17,13 +17,14 @@ export function Navigation({ activeSection, onSectionChange }: NavigationProps) 
   const { actualTheme } = useTheme()
 
   const handleScrollTo = (sectionId: string) => {
-    onSectionChange(sectionId) // Use the function passed from the parent
+    onSectionChange(sectionId)
     setIsMenuOpen(false)
   }
 
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
+    { id: "tech-stack", label: "Tech Stack" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "education", label: "Education" },

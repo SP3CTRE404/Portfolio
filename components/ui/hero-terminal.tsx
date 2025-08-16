@@ -34,7 +34,8 @@ export function HeroTerminal() {
             <div><span className="text-gray-500">#include</span> <span className="text-orange-400">{'<string>'}</span></div>
             <div><span className="text-gray-500">using namespace</span> <span className="text-orange-400">{'std;'}</span></div>
             <br />
-            <div><span className="text-purple-400">struct</span> Profile {'{\n'}</div>
+            <div><span className="text-purple-400">class</span> Profile {'{\n'}</div>
+            <div><span className="text-purple-400"> public:</span> </div>
             <div className="pl-4"><span className="text-teal-400">string</span> <span className="text-cyan-400">name</span> = <span className="text-orange-400">"Udit Aggarwal"</span>;</div>
             <div className="pl-4"><span className="text-teal-400">string</span> <span className="text-cyan-400">title</span> = <span className="text-orange-400">"Software Developer & Engineer"</span>;</div>
             <div className="pl-4"><span className="text-teal-400">vector{'<string>'}</span> <span className="text-cyan-400">skills</span> = {'{\n'}</div>

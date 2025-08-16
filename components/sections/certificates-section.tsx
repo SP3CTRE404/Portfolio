@@ -5,6 +5,14 @@ import { cn } from "@/lib/utils";
 
 // ✅ Updated colorClass to include background gradient AND a glowing shadow
 const certificates = [
+{
+  title: "AI Fluency: Framework & Foundations",
+  issuer: "Anthropic",
+  date: "Issued Aug 2025",
+  link: "https://verify.skilljar.com/c/o5kucjkssxry", 
+  icon: Award,
+  colorClass: "from-teal-400 to-blue-500 shadow-blue-500/20 group-hover:shadow-blue-500/40",
+},
   {
     title: "Introduction to Model Context Protocol",
     issuer: "Anthropic",
@@ -13,14 +21,14 @@ const certificates = [
     icon: Award,
     colorClass: "from-teal-400 to-blue-500 shadow-blue-500/20 group-hover:shadow-blue-500/40",
   },
-  {
-    title: "Model Context Protocol Advanced Topics",
-    issuer: "Anthropic",
-    date: "Issued Aug 2025",
-    link: "https://verify.skilljar.com/c/dk85q9wwv6fs",
-    icon: Award,
-    colorClass: "from-purple-500 to-pink-500 shadow-pink-500/20 group-hover:shadow-pink-500/40",
-  },
+    {
+        title: "Model Context Protocol Advanced Topics",
+        issuer: "Anthropic",
+        date: "Issued Aug 2025",
+        link: "https://verify.skilljar.com/c/dk85q9wwv6fs",
+        icon: Award,
+        colorClass: "from-purple-500 to-pink-500 shadow-pink-500/20 group-hover:shadow-pink-500/40",
+    },
 ];
 
 export function CertificatesSection() {

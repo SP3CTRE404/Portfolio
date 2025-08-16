@@ -11,6 +11,7 @@ import {
   FaBriefcase,
   FaCertificate,
   FaEnvelope,
+  FaBookOpen,
 } from "react-icons/fa";
 
 interface NavigationProps {
@@ -26,7 +27,8 @@ export function Navigation({ activeSection, onSectionChange }: NavigationProps) 
     { id: "skills", label: "Skills", icon: FaCode }, 
     { id: "experience", label: "Experience", icon: FaBriefcase },
     { id: "projects", label: "Projects", icon: FaCode },
-    { id: "education", label: "Education", icon: FaCertificate }, // Changed icon
+    { id: "certificates", label: "Certificates", icon: FaCertificate },
+    { id: "education", label: "Education", icon: FaBookOpen }, // Changed icon
     { id: "contact", label: "Contact", icon: FaEnvelope },
   ];
 

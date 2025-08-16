@@ -13,6 +13,7 @@ import { AboutSection } from "@/components/sections/about-section";
 import { ExperienceSection } from "@/components/sections/experience-section"; 
 import { SkillsSection } from "@/components/sections/skills-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
+import { CertificatesSection } from "@/components/sections/certificates-section";
 import { EducationSection } from "@/components/sections/education-section";
 import { ContactSection } from "@/components/sections/contact-section";
 
@@ -29,7 +30,7 @@ export default function Page() {
 
   // 👇 THE FIX IS INSIDE THIS useEffect HOOK 👇
   useEffect(() => {
-    const sectionIds = ["home", "about", "skills", "experience", "projects", "education", "contact"];
+    const sectionIds = ["home", "about", "skills", "experience", "projects", 'certificates', "education", "contact"];
     
     const observer = new IntersectionObserver(
       (entries) => {
@@ -76,6 +77,7 @@ export default function Page() {
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
+        <CertificatesSection />
         <EducationSection />
         <ContactSection />
       </main>

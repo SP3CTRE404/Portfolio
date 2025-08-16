@@ -6,8 +6,8 @@ import TagCloud from 'TagCloud';
 const texts = [
   'Next.js', 'React', 'TypeScript',
   'TailwindCSS', 'Python', 'Git',
-  'Machine Learning', 'Java', 'SAP',
-  'Android', 'C#', 'C++', 'Vercel'
+  'Machine Learning', 'Java', 'SAP', '.NET',
+  'Android', 'C#', 'C++', 'Vercel', 'PyTorch'
 ];
 
 export function SkillSphere() {

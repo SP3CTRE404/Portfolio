@@ -54,7 +54,7 @@ export function HeroTerminal() {
               </span>
             ))}
 
-            <div className="pl-4">{'},'}{'\n'}
+            <div className="pl-4">{'}'}{'\n'}
             
             {/* 👇 NEW BOOLEAN MEMBERS ADDED HERE 👇 */}
             <div className="pl-4"><span className="text-purple-400">bool</span> <span className="text-cyan-400">isHardWorker</span> = <span className="text-purple-400">true</span>;</div>

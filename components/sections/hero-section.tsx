@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, FileText } from "lucide-react"; 
-import { cn } from "@/lib/utils";
+// import { cn } from "@/lib/utils";
 import { useTheme } from "@/components/theme-provider";
 import { motion, AnimatePresence } from "framer-motion";
 import { HeroTerminal } from "@/components/ui/hero-terminal";
@@ -64,68 +64,62 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
               I'm Udit Aggarwal
             </h1>
 
-            {/* 👇 BUTTONS MOVED HERE 👇 */}
-            <div className="animate-fade-in-up mt-8">
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start">
-                <Button
-                  size="lg"
-                  onClick={() => onNavigate("projects")}
-                  className={cn(
-                    "font-body font-semibold hover-lift neon-border",
-                    actualTheme === "dark" && "animate-glow",
-                  )}
-                >
-                  View Projects
-                </Button>
-                
-                <a href="/Udit-Aggarwal-Resume.pdf" target="_blank" rel="noopener noreferrer">
+              {/* 👇 BUTTONS MOVED HERE 👇 */}
+              <div className="animate-fade-in-up mt-8">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start">
                   <Button
                     size="lg"
-                    className={cn(
-                      "font-body font-semibold hover-lift neon-border w-full sm:w-auto",
-                      actualTheme === "dark" && "animate-glow"
-                    )}
+                    onClick={() => onNavigate("projects")}
+                    className={`font-body font-semibold hover-lift neon-border ${
+                      actualTheme === "dark" ? "animate-glow" : ""
+                    }`}
                   >
-                    <FileText size={18} className="mr-2" />
-                    View Resume
+                    View Projects
                   </Button>
-                </a>
-
-                <Button
-                  size="lg"
-                  onClick={() => onNavigate("contact")}
-                  className={cn(
-                    "font-body font-semibold hover-lift neon-border",
-                     actualTheme === "dark" && "animate-glow"
-                   )}
-                >
-                  Get In Touch
-                </Button>
+                  <a href="/Udit-Aggarwal-Resume.pdf" target="_blank" rel="noopener noreferrer">
+                    <Button
+                      size="lg"
+                      className={`font-body font-semibold hover-lift neon-border w-full sm:w-auto ${
+                        actualTheme === "dark" ? "animate-glow" : ""
+                      }`}
+                    >
+                      <FileText size={18} className="mr-2" />
+                      View Resume
+                    </Button>
+                  </a>
+                  <Button
+                    size="lg"
+                    onClick={() => onNavigate("contact")}
+                    className={`font-body font-semibold hover-lift neon-border ${
+                      actualTheme === "dark" ? "animate-glow" : ""
+                    }`}
+                  >
+                    Get In Touch
+                  </Button>
+                </div>
               </div>
             </div>
+  
+            {/* Right Column: Terminal */}
+            <div className="w-full md:w-1/2 max-w-lg">
+              <HeroTerminal />
+            </div>
+  
           </div>
-
-          {/* Right Column: Terminal */}
-          <div className="w-full md:w-1/2 max-w-lg">
-            <HeroTerminal />
-          </div>
-
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <Button
-          size="icon"
-          variant="ghost"
-          onClick={() => onNavigate("about")}
-          className={cn(
-            "rounded-full h-12 w-12",
-            actualTheme === "dark" && "text-primary animate-bounce hover-animate-none"
-          )}
-        >
-          <ChevronDown size={32} />
-        </Button>
-      </div>
-    </section>
+  
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <Button
+            size="icon"
+            variant="ghost"
+            onClick={() => onNavigate("about")}
+            className={`rounded-full h-12 w-12 ${
+              actualTheme === "dark" ? "text-primary animate-bounce hover-animate-none" : ""
+            }`}
+          >
+            <ChevronDown size={32} />
+          </Button>
+        </div>
+      </section>
   );
 }

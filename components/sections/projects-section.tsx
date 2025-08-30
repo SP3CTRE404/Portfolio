@@ -5,6 +5,7 @@ import { HolographicCard } from "@/components/ui/holographic-card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Filter, Github, Eye } from "lucide-react"
+import { Description } from "@radix-ui/react-toast"
 
 const projects = [
   {
@@ -28,6 +29,16 @@ const projects = [
     github: "https://github.com/SP3CTRE404/Who-Let-Me-Cook/tree/master/WhoLetMeCook",
     date: "Ongoing",
     status: "In Progress",
+  },
+  {
+    title: "Digital Twin System For Rumour Threat Analysis",
+    description: "This project aims to develop an intelligent system capable of automatically assessing the potential threat of online rumors and misinformation. The core objective is to move beyond simple true/false detection and create a model that can provide a nuanced, quantitative harmfulness score for a given rumor. This score helps to prioritize moderation efforts, understand public reaction, and mitigate the real-world impact of fake news.\n The methodology is directly inspired by the research paper: \"Harmfulness metrics in digital twins of social network rumors detection in cloud computing environment\" by Li et al. (2024). We replicate the paper's novel two-stage training process to build a highly effective threat analysis model.\n The ultimate vision is to integrate this model into a Digital Twin of a social network environment. This would allow for real-time monitoring and simulation, enabling platform managers to predict the trajectory and potential damage of a rumor before it spreads widely.",
+    tags: ["Digital Twin", "Python", "PyTorch", "Machine Learning", "Data Analysis"],
+    category: "Machine Learning",
+    link: "https://github.com/SP3CTRE404/Who-Let-Me-Cook/tree/master/WhoLetMeCook",
+    github: "https://github.com/SP3CTRE404/Who-Let-Me-Cook/tree/master/WhoLetMeCook",
+    date: "Ongoing",
+    status: "In Progress",    
   },
 ]
 

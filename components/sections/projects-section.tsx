@@ -1,181 +1,170 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { HolographicCard } from "@/components/ui/holographic-card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Calendar, Filter, Github, Eye } from "lucide-react"
-import { Description } from "@radix-ui/react-toast"
+import { useTransform, motion, useScroll } from "framer-motion";
+import { useRef } from "react";
+import { Github, ExternalLink } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge"; // Used for tags and status
 
+// ✅ The projects array is updated with your new data
 const projects = [
   {
-    title: "Image Recognition on FashionMNIST Dataset Using CNN",
-    description:
-      "Implemented a Convolutional Neural Network to classify images of clothing articles from the FashionMNIST dataset. Pre-processed data using rescaling and augmentation techniques to improve model generalization and prevent overfitting. Achieved 94% validation accuracy by engineering a network with Conv2D, MaxPooling2D, and Dropout layers for enhanced performance.",
-    tags: ["PyTorch", "CNN", "Deep Learning", "Python", "Matplotlib", "Pandas"],
+    title: "Image Recognition on FashionMNIST Using CNN",
+    description: "Implemented a CNN to classify clothing images, achieving 94% validation accuracy using techniques like data augmentation and Dropout layers.",
+    tags: ["PyTorch", "CNN", "Deep Learning", "Python", "Matplotlib"],
     category: "Machine Learning",
     link: "https://github.com/SP3CTRE404/ImageRecognition",
     github: "https://github.com/SP3CTRE404/ImageRecognition",
     date: "May 2023",
     status: "Completed",
+    color: "#60A5FA", // Blue
+    colorClass: "from-blue-400 to-sky-500 shadow-sky-500/20 group-hover:shadow-sky-500/40",
   },
   {
     title: "Who Let Me Cook! - AI Powered Recipe App",
-    description:
-      "Who Let Me Cook! is a mobile recipe app built with .NET MAUI (C#/XAML) and the MVVM architecture. It fetches data from TheMealDB API and uses the Google Gemini API for its core intelligence. The app dynamically simplifies complex cooking instructions and automatically scales ingredient quantities based on the user's selected serving size. This creates a highly adaptive and user-friendly experience, making sophisticated recipes accessible to cooks of all skill levels.",
-    tags: [".NET MAUI", "C#", "XAML", "Google Gemini API", "TheMealDB API"],
+    description: "A mobile recipe app using .NET MAUI and Google Gemini API to dynamically simplify instructions and scale ingredient quantities for users.",
+    tags: [".NET MAUI", "C#", "XAML", "Gemini API", "MVVM"],
     category: "Mobile Development",
     link: "https://github.com/SP3CTRE404/Who-Let-Me-Cook",
     github: "https://github.com/SP3CTRE404/Who-Let-Me-Cook/tree/master/WhoLetMeCook",
     date: "Ongoing",
     status: "In Progress",
+    color: "#F472B6", // Pink
+    colorClass: "from-pink-400 to-rose-500 shadow-rose-500/20 group-hover:shadow-rose-500/40",
   },
   {
     title: "Digital Twin System For Rumour Threat Analysis",
-    description: "This project aims to develop an intelligent system capable of automatically assessing the potential threat of online rumors and misinformation. The core objective is to move beyond simple true/false detection and create a model that can provide a nuanced, quantitative harmfulness score for a given rumor. This score helps to prioritize moderation efforts, understand public reaction, and mitigate the real-world impact of fake news.\n\n The ultimate vision is to integrate this model into a Digital Twin of a social network environment. This would allow for real-time monitoring and simulation, enabling platform managers to predict the trajectory and potential damage of a rumor before it spreads widely.",
-    tags: ["Digital Twin", "Python", "PyTorch", "Machine Learning", "Data Analysis"],
+    description: "Developing an intelligent system to assess the threat of online rumors, providing a quantitative harmfulness score to prioritize moderation efforts.",
+    tags: ["Digital Twin", "Python", "PyTorch", "Machine Learning"],
     category: "Machine Learning",
-    link: "https://github.com/SP3CTRE404/Who-Let-Me-Cook/tree/master/WhoLetMeCook",
-    github: "https://github.com/SP3CTRE404/Who-Let-Me-Cook/tree/master/WhoLetMeCook",
+    link: "https://github.com/SP3CTRE404/Digital-Twin-Systems-for-Rumor-Analysis",
+    github: "https://github.com/SP3CTRE404/Digital-Twin-Systems-for-Rumor-Analysis",
     date: "Ongoing",
-    status: "In Progress",    
+    status: "In Progress",
+    color: "#818CF8", // Indigo
+    colorClass: "from-indigo-400 to-purple-500 shadow-purple-500/20 group-hover:shadow-purple-500/40",
   },
-]
+];
 
-const categories = [
-  "All",
-  "Machine Learning",
-  "Mobile Development"  
-]
+// ✅ Updated TypeScript interface for the new data structure
+interface CardProps {
+  i: number;
+  title: string;
+  description: string;
+  tags: string[];
+  category: string;
+  link: string;
+  github: string;
+  date: string;
+  status: string;
+  color: string;
+  colorClass: string;
+  progress: any;
+  range: [number, number];
+  targetScale: number;
+}
 
 export function ProjectsSection() {
-  const [selectedCategory, setSelectedCategory] = useState("All")
-
-  const filteredProjects = projects.filter(
-    (project) =>
-      selectedCategory === "All" ||
-      project.category === selectedCategory,
-  )
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
 
   return (
-    <section id="projects" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
+    <section id="projects" ref={container} className="relative bg-background pt-16">
+      <div className="text-center mb-16 px-4">
+        <h2 className="font-heading font-bold text-4xl md:text-5xl gradient-text">
+          Projects
+        </h2>
+        <p className="font-body text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
+          A selection of projects that showcase my passion for building impactful software.
+        </p>
+      </div>
+      {projects.map((project, i) => {
+        const targetScale = 1 - (projects.length - i) * 0.05;
+        return (
+          <Card
+            key={`p_${i}`}
+            i={i}
+            {...project}
+            progress={scrollYProgress}
+            range={[i * (1 / projects.length), 1]}
+            targetScale={targetScale}
+          />
+        );
+      })}
+    </section>
+  );
+}
 
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-5xl md:text-6xl mb-6 gradient-text">
-            Key Projects
-          </h2>
-          <p className="font-body text-xl text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my technical projects in machine learning and mobile
-            development
-          </p>
-        </div>
+// ✅ The Card component is redesigned to show all the new info
+function Card({ i, title, description, tags, category, link, github, date, status, color, colorClass, progress, range, targetScale }: CardProps) {
+  const container = useRef(null);
+  const scale = useTransform(progress, range, [1, targetScale]);
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <div className="flex items-center gap-2 text-muted-foreground mb-4">
-            <Filter size={16} />
-            <span className="font-body text-sm">Filter by category:</span>
+  return (
+    <div ref={container} className="h-screen flex items-center justify-center sticky top-0 px-4">
+      <motion.div
+        style={{
+          scale,
+          top: `calc(-5vh + ${i * 25}px)`,
+        }}
+        className="relative -top-1/4 h-auto w-full max-w-4xl origin-top group"
+      >
+        <div 
+          className={cn(
+            "w-full rounded-2xl overflow-hidden shadow-2xl p-6 md:p-8 flex flex-col justify-between min-h-[350px]",
+            "bg-gradient-to-br transition-all duration-300",
+            "neon-border animate-glow",
+            colorClass
+          )}
+        >
+          {/* Card Header */}
+          <div className="flex justify-between items-start gap-4 mb-4">
+            <div>
+              <p className="text-sm font-medium text-white/70" style={{ color }}>{category}</p>
+              <h2 className="text-xl md:text-2xl font-bold text-white">{title}</h2>
+            </div>
+            <Badge 
+              className="text-xs whitespace-nowrap"
+              variant={status === "Completed" ? "default" : "secondary"}
+            >
+              {status}
+            </Badge>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={
-                  selectedCategory === category ? "default" : "outline"
-                }
-                size="sm"
-                onClick={() => setSelectedCategory(category)}
-                className="font-body hover-lift glass-card"
-              >
-                {category}
-              </Button>
+        
+          
+          {/* Description */}
+          <p className="text-sm md:text-base text-white/70 leading-relaxed mb-4">
+            {description}
+          </p>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {tags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="font-normal">
+                {tag}
+              </Badge>
             ))}
           </div>
+          
+          {/* Footer with Links */}
+          <div className="mt-auto pt-4 border-t border-white/20 flex items-center justify-between text-white/80">
+            <span className="text-xs font-mono">{date}</span>
+            <div className="flex items-center gap-6">
+              <a href={github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Github size={18} />
+                <span className="text-sm">Code</span>
+              </a>
+              <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+                <ExternalLink size={18} />
+                <span className="text-sm">Details</span>
+              </a>
+            </div>
+          </div>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {filteredProjects.map((project, index) => (
-            <HolographicCard
-              key={index}
-              intensity="medium"
-              className="p-8 flex flex-col h-full animate-fade-in-up"
-            >
-              <div className="flex-grow">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="font-heading font-bold text-2xl text-foreground pr-4">
-                    {project.title}
-                  </h3>
-                  <Badge
-                    variant={
-                      project.status === "Completed"
-                        ? "secondary"
-                        : "default"
-                    }
-                    className="text-xs flex-shrink-0"
-                  >
-                    {project.status}
-                  </Badge>
-                </div>
-
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-                  <Calendar size={14} />
-                  <span>{project.date}</span>
-                </div>
-
-                <p className="font-body text-muted-foreground mb-6 text-sm leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge
-                      key={tag}
-                      variant="outline"
-                      className="font-body text-xs"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-white/10 flex items-center gap-4">
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="sm"
-                  className="text-accent flex-1"
-                >
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Eye size={16} className="mr-2" />
-                    View Project
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="sm"
-                  className="flex-1"
-                >
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github size={16} className="mr-2" />
-                    Source Code
-                  </a>
-                </Button>
-              </div>
-            </HolographicCard>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+      </motion.div>
+    </div>
+  );
 }

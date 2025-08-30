@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge"; // Used for tags and status
 const projects = [
   {
     title: "Image Recognition on FashionMNIST Using CNN",
-    description: "Implemented a CNN to classify clothing images, achieving 94% validation accuracy using techniques like data augmentation and Dropout layers.",
+    description:  "Implemented a Convolutional Neural Network to classify images of clothing articles from the FashionMNIST dataset. Pre-processed data using rescaling and augmentation techniques to improve model generalization and prevent overfitting. Achieved 94% validation accuracy by engineering a network with Conv2D, MaxPooling2D, and Dropout layers for enhanced performance.",
     tags: ["PyTorch", "CNN", "Deep Learning", "Python", "Matplotlib"],
     category: "Machine Learning",
     link: "https://github.com/SP3CTRE404/ImageRecognition",
@@ -22,7 +22,7 @@ const projects = [
   },
   {
     title: "Who Let Me Cook! - AI Powered Recipe App",
-    description: "A mobile recipe app using .NET MAUI and Google Gemini API to dynamically simplify instructions and scale ingredient quantities for users.",
+    description: "Who Let Me Cook! is a mobile recipe app built with .NET MAUI (C#/XAML) and the MVVM architecture. It fetches data from TheMealDB API and uses the Google Gemini API for its core intelligence. The app dynamically simplifies complex cooking instructions and automatically scales ingredient quantities based on the user's selected serving size. This creates a highly adaptive and user-friendly experience, making sophisticated recipes accessible to cooks of all skill levels.",
     tags: [".NET MAUI", "C#", "XAML", "Gemini API", "MVVM"],
     category: "Mobile Development",
     link: "https://github.com/SP3CTRE404/Who-Let-Me-Cook",
@@ -34,7 +34,9 @@ const projects = [
   },
   {
     title: "Digital Twin System For Rumour Threat Analysis",
-    description: "Developing an intelligent system to assess the threat of online rumors, providing a quantitative harmfulness score to prioritize moderation efforts.",
+    description:  "Digital Twin System For Rumour Threat Analysis",
+
+    description: "This project aims to develop an intelligent system capable of automatically assessing the potential threat of online rumors and misinformation. The core objective is to move beyond simple true/false detection and create a model that can provide a nuanced, quantitative harmfulness score for a given rumor. This score helps to prioritize moderation efforts, understand public reaction, and mitigate the real-world impact of fake news.\n\n The ultimate vision is to integrate this model into a Digital Twin of a social network environment. This would allow for real-time monitoring and simulation, enabling platform managers to predict the trajectory and potential damage of a rumor before it spreads widely.",
     tags: ["Digital Twin", "Python", "PyTorch", "Machine Learning"],
     category: "Machine Learning",
     link: "https://github.com/SP3CTRE404/Digital-Twin-Systems-for-Rumor-Analysis",

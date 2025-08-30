@@ -5,12 +5,13 @@ import { useRef } from "react";
 import { Github, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge"; // Used for tags and status
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"; // ✅ Import Tooltip components
 
 // ✅ The projects array is updated with your new data
 const projects = [
   {
     title: "Image Recognition on FashionMNIST Using CNN",
-    description:  "Implemented a Convolutional Neural Network to classify images of clothing articles from the FashionMNIST dataset. Pre-processed data using rescaling and augmentation techniques to improve model generalization and prevent overfitting. Achieved 94% validation accuracy by engineering a network with Conv2D, MaxPooling2D, and Dropout layers for enhanced performance.",
+    description: "Implemented a Convolutional Neural Network to classify images of clothing articles from the FashionMNIST dataset. Pre-processed data using rescaling and augmentation techniques to improve model generalization and prevent overfitting. Achieved 94% validation accuracy by engineering a network with Conv2D, MaxPooling2D, and Dropout layers for enhanced performance.",
     tags: ["PyTorch", "CNN", "Deep Learning", "Python", "Matplotlib"],
     category: "Machine Learning",
     github: "https://github.com/SP3CTRE404/ImageRecognition",
@@ -98,60 +99,76 @@ function Card({ i, title, description, tags, category, github, date, status, col
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div ref={container} className="h-screen flex items-center justify-center sticky top-0 px-4">
-      <motion.div
-        style={{
-          scale,
-          top: `calc(-5vh + ${i * 25}px)`,
-        }}
-        className="relative -top-1/4 h-auto w-full max-w-4xl origin-top group"
-      >
-        <div 
-          className={cn(
-            "w-full rounded-2xl overflow-hidden shadow-2xl p-6 md:p-8 flex flex-col justify-between min-h-[350px]",
-            "bg-gradient-to-br transition-all duration-300",
-            "neon-border animate-glow",
-            colorClass
-          )}
+    <TooltipProvider>
+      <div ref={container} className="h-screen flex items-center justify-center sticky top-0 px-4">
+        <motion.div
+          style={{
+            scale,
+            top: `calc(-5vh + ${i * 25}px)`,
+          }}
+          className="relative -top-1/4 h-auto w-full max-w-4xl origin-top group"
         >
-          {/* Card Header */}
-          <div className="flex justify-between items-start gap-4 mb-4">
-            <div>
-              <p className="text-sm font-medium text-white/70" style={{ color }}>{category}</p>
-              <h2 className="text-xl md:text-2xl font-bold text-white">{title}</h2>
-            </div>
-            <Badge 
-              className="text-xs whitespace-nowrap"
-              variant={status === "Completed" ? "default" : "outline"}
-            >
-              {status}
-            </Badge>
-          </div>
-          
-          <p className="text-sm md:text-base text-white/70 leading-relaxed mb-4">
-            {description}
-          </p>
-
-          <div className="flex flex-wrap gap-2 mb-6">
-            {tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="font-normal">
-                {tag}
+          <div
+            className={cn(
+              "w-full rounded-2xl overflow-hidden shadow-2xl p-6 md:p-8 flex flex-col justify-between min-h-[350px]",
+              "bg-gradient-to-br transition-all duration-300",
+              "neon-border animate-glow",
+              colorClass
+            )}
+          >
+            {/* ... (Card Header, Description, and Tags are unchanged) ... */}
+            <div className="flex justify-between items-start gap-4 mb-4">
+              <div>
+                <p className="text-sm font-medium text-white/70" style={{ color }}>{category}</p>
+                <h2 className="text-xl md:text-2xl font-bold text-white">{title}</h2>
+              </div>
+              <Badge
+                className="text-xs whitespace-nowrap"
+                variant={status === "Completed" ? "default" : "outline"}
+              >
+                {status}
               </Badge>
-            ))}
-          </div>
-          
-          {/* ✅ Footer updated to show only one button */}
-          <div className="mt-auto pt-4 border-t border-white/20 flex items-center justify-between text-white/80">
-            <span className="text-xs font-mono">{date}</span>
-            <div className="flex items-center">
-              <a href={github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Github size={18} />
-                <span className="text-sm font-semibold">GitHub</span>
-              </a>
+            </div>
+
+            <p className="text-sm md:text-base text-white/70 leading-relaxed mb-4">
+              {description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-6">
+              {tags.map((tag) => (
+                <Badge key={tag} variant="secondary" className="font-normal">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+
+            <div className="mt-auto pt-4 border-t border-white/20 flex items-center justify-between text-white/80">
+              <span className="text-xs font-mono">{date}</span>
+              <div className="flex items-center">
+
+                {/* ✅ 3. Wrap the link with the Tooltip components */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href={github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative z-10 flex items-center gap-2 text-sm font-medium hover:text-white hover:underline transition-colors"
+                    >
+                      <Github size={16} />
+                      <span>View on GitHub</span>
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{github}</p>
+                  </TooltipContent>
+                </Tooltip>
+
+              </div>
             </div>
           </div>
-        </div>
-      </motion.div>
-    </div>
+        </motion.div>
+      </div>
+    </TooltipProvider>
   );
 }

@@ -13,7 +13,6 @@ const projects = [
     description:  "Implemented a Convolutional Neural Network to classify images of clothing articles from the FashionMNIST dataset. Pre-processed data using rescaling and augmentation techniques to improve model generalization and prevent overfitting. Achieved 94% validation accuracy by engineering a network with Conv2D, MaxPooling2D, and Dropout layers for enhanced performance.",
     tags: ["PyTorch", "CNN", "Deep Learning", "Python", "Matplotlib"],
     category: "Machine Learning",
-    link: "https://github.com/SP3CTRE404/ImageRecognition",
     github: "https://github.com/SP3CTRE404/ImageRecognition",
     date: "May 2023",
     status: "Completed",
@@ -25,8 +24,7 @@ const projects = [
     description: "Who Let Me Cook! is a mobile recipe app built with .NET MAUI (C#/XAML) and the MVVM architecture. It fetches data from TheMealDB API and uses the Google Gemini API for its core intelligence. The app dynamically simplifies complex cooking instructions and automatically scales ingredient quantities based on the user's selected serving size. This creates a highly adaptive and user-friendly experience, making sophisticated recipes accessible to cooks of all skill levels.",
     tags: [".NET MAUI", "C#", "XAML", "Gemini API", "MVVM"],
     category: "Mobile Development",
-    link: "https://github.com/SP3CTRE404/Who-Let-Me-Cook",
-    github: "https://github.com/SP3CTRE404/Who-Let-Me-Cook/tree/master/WhoLetMeCook",
+    github: "https://github.com/SP3CTRE404/Who-Let-Me-Cook",
     date: "Ongoing",
     status: "In Progress",
     color: "#F472B6", // Pink
@@ -37,7 +35,6 @@ const projects = [
     description: "This project aims to develop an intelligent system capable of automatically assessing the potential threat of online rumors and misinformation. The core objective is to move beyond simple true/false detection and create a model that can provide a nuanced, quantitative harmfulness score for a given rumor. This score helps to prioritize moderation efforts, understand public reaction, and mitigate the real-world impact of fake news.\n\n The ultimate vision is to integrate this model into a Digital Twin of a social network environment. This would allow for real-time monitoring and simulation, enabling platform managers to predict the trajectory and potential damage of a rumor before it spreads widely.",
     tags: ["Digital Twin", "Python", "PyTorch", "Machine Learning"],
     category: "Machine Learning",
-    link: "https://github.com/SP3CTRE404/Digital-Twin-Systems-for-Rumor-Analysis",
     github: "https://github.com/SP3CTRE404/Digital-Twin-Systems-for-Rumor-Analysis",
     date: "Ongoing",
     status: "In Progress",
@@ -45,15 +42,13 @@ const projects = [
     colorClass: "from-indigo-400 to-purple-500 shadow-purple-500/20 group-hover:shadow-purple-500/40",
   },
 ];
-
-// ✅ Updated TypeScript interface for the new data structure
+// ✅ Updated props interface
 interface CardProps {
   i: number;
   title: string;
   description: string;
   tags: string[];
   category: string;
-  link: string;
   github: string;
   date: string;
   status: string;
@@ -98,8 +93,7 @@ export function ProjectsSection() {
   );
 }
 
-// ✅ The Card component is redesigned to show all the new info
-function Card({ i, title, description, tags, category, link, github, date, status, color, colorClass, progress, range, targetScale }: CardProps) {
+function Card({ i, title, description, tags, category, github, date, status, color, colorClass, progress, range, targetScale }: CardProps) {
   const container = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
 
@@ -128,19 +122,16 @@ function Card({ i, title, description, tags, category, link, github, date, statu
             </div>
             <Badge 
               className="text-xs whitespace-nowrap"
-              variant={status === "Completed" ? "default" : "secondary"}
+              variant={status === "Completed" ? "default" : "outline"}
             >
               {status}
             </Badge>
           </div>
-        
           
-          {/* Description */}
           <p className="text-sm md:text-base text-white/70 leading-relaxed mb-4">
             {description}
           </p>
 
-          {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-6">
             {tags.map((tag) => (
               <Badge key={tag} variant="secondary" className="font-normal">
@@ -149,17 +140,13 @@ function Card({ i, title, description, tags, category, link, github, date, statu
             ))}
           </div>
           
-          {/* Footer with Links */}
+          {/* ✅ Footer updated to show only one button */}
           <div className="mt-auto pt-4 border-t border-white/20 flex items-center justify-between text-white/80">
             <span className="text-xs font-mono">{date}</span>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center">
               <a href={github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
                 <Github size={18} />
-                <span className="text-sm">Code</span>
-              </a>
-              <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
-                <ExternalLink size={18} />
-                <span className="text-sm">Details</span>
+                <span className="text-sm font-semibold">GitHub</span>
               </a>
             </div>
           </div>

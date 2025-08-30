@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, FileText } from "lucide-react"; 
-// import { cn } from "@/lib/utils";
 import { useTheme } from "@/components/theme-provider";
 import { motion, AnimatePresence } from "framer-motion";
 import { HeroTerminal } from "@/components/ui/hero-terminal";

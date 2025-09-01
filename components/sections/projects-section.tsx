@@ -32,12 +32,12 @@ const projects = [
     colorClass: "from-pink-400 to-rose-500 shadow-rose-500/20 group-hover:shadow-rose-500/40",
   },
   {
-    title: "Image Recognition on FashionMNIST Using CNN",
-    description: "Implemented a Convolutional Neural Network to classify images of clothing articles from the FashionMNIST dataset. Pre-processed data using rescaling and augmentation techniques to improve model generalization and prevent overfitting. Achieved 94% validation accuracy by engineering a network with Conv2D, MaxPooling2D, and Dropout layers for enhanced performance.",
+    title: "Sentiment Analyzer Using Gemini API",
+    description: "A web application that analyzes the sentiment of any given text and classifies it as Positive, Negative, or Neutral. This tool leverages the advanced reasoning capabilities of Google's Gemini family of models to provide real-time, accurate sentiment analysis. The application follows a straightforward process: users input text, which is sent to the Gemini API for analysis. The API returns a single-word classification, which is then displayed to the user with a corresponding color.",
     tags: ["Google API", "Artificial Intelligent", "Python", "Streamlit", "Gemini"],
     category: "Machine Learning",
     github: "https://github.com/SP3CTRE404/Sentiment-Analyzer",
-    date: "May 2023",
+    date: "September 2025",
     status: "Completed",
     color: "#60A5FA", // Blue
     colorClass: "from-blue-400 to-sky-500 shadow-sky-500/20 group-hover:shadow-sky-500/40",

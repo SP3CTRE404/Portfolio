@@ -10,15 +10,15 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 // ✅ The projects array is updated with your new data
 const projects = [
   {
-    title: "Image Recognition on FashionMNIST Using CNN",
-    description: "Implemented a Convolutional Neural Network to classify images of clothing articles from the FashionMNIST dataset. Pre-processed data using rescaling and augmentation techniques to improve model generalization and prevent overfitting. Achieved 94% validation accuracy by engineering a network with Conv2D, MaxPooling2D, and Dropout layers for enhanced performance.",
-    tags: ["PyTorch", "CNN", "Deep Learning", "Python", "Matplotlib"],
+    title: "Digital Twin System For Rumour Threat Analysis",
+    description: "This project aims to develop an intelligent system capable of automatically assessing the potential threat of online rumors and misinformation. The core objective is to move beyond simple true/false detection and create a model that can provide a nuanced, quantitative harmfulness score for a given rumor. This score helps to prioritize moderation efforts, understand public reaction, and mitigate the real-world impact of fake news.\n\n The ultimate vision is to integrate this model into a Digital Twin of a social network environment. This would allow for real-time monitoring and simulation, enabling platform managers to predict the trajectory and potential damage of a rumor before it spreads widely.",
+    tags: ["Digital Twin", "Python", "PyTorch", "Machine Learning"],
     category: "Machine Learning",
-    github: "https://github.com/SP3CTRE404/ImageRecognition",
-    date: "May 2023",
-    status: "Completed",
-    color: "#60A5FA", // Blue
-    colorClass: "from-blue-400 to-sky-500 shadow-sky-500/20 group-hover:shadow-sky-500/40",
+    github: "https://github.com/SP3CTRE404/Digital-Twin-Systems-for-Rumor-Analysis",
+    date: "Ongoing",
+    status: "In Progress",
+    color: "#818CF8", // Indigo
+    colorClass: "from-indigo-400 to-purple-500 shadow-purple-500/20 group-hover:shadow-purple-500/40",
   },
   {
     title: "Who Let Me Cook! - AI Powered Recipe App",
@@ -32,15 +32,26 @@ const projects = [
     colorClass: "from-pink-400 to-rose-500 shadow-rose-500/20 group-hover:shadow-rose-500/40",
   },
   {
-    title: "Digital Twin System For Rumour Threat Analysis",
-    description: "This project aims to develop an intelligent system capable of automatically assessing the potential threat of online rumors and misinformation. The core objective is to move beyond simple true/false detection and create a model that can provide a nuanced, quantitative harmfulness score for a given rumor. This score helps to prioritize moderation efforts, understand public reaction, and mitigate the real-world impact of fake news.\n\n The ultimate vision is to integrate this model into a Digital Twin of a social network environment. This would allow for real-time monitoring and simulation, enabling platform managers to predict the trajectory and potential damage of a rumor before it spreads widely.",
-    tags: ["Digital Twin", "Python", "PyTorch", "Machine Learning"],
+    title: "Image Recognition on FashionMNIST Using CNN",
+    description: "Implemented a Convolutional Neural Network to classify images of clothing articles from the FashionMNIST dataset. Pre-processed data using rescaling and augmentation techniques to improve model generalization and prevent overfitting. Achieved 94% validation accuracy by engineering a network with Conv2D, MaxPooling2D, and Dropout layers for enhanced performance.",
+    tags: ["Google API", "Artificial Intelligent", "Python", "Streamlit", "Gemini"],
     category: "Machine Learning",
-    github: "https://github.com/SP3CTRE404/Digital-Twin-Systems-for-Rumor-Analysis",
-    date: "Ongoing",
-    status: "In Progress",
-    color: "#818CF8", // Indigo
-    colorClass: "from-indigo-400 to-purple-500 shadow-purple-500/20 group-hover:shadow-purple-500/40",
+    github: "https://github.com/SP3CTRE404/Sentiment-Analyzer",
+    date: "May 2023",
+    status: "Completed",
+    color: "#60A5FA", // Blue
+    colorClass: "from-blue-400 to-sky-500 shadow-sky-500/20 group-hover:shadow-sky-500/40",
+  },
+  {
+    title: "Image Recognition on FashionMNIST Using CNN",
+    description: "Implemented a Convolutional Neural Network to classify images of clothing articles from the FashionMNIST dataset. Pre-processed data using rescaling and augmentation techniques to improve model generalization and prevent overfitting. Achieved 94% validation accuracy by engineering a network with Conv2D, MaxPooling2D, and Dropout layers for enhanced performance.",
+    tags: ["PyTorch", "CNN", "Deep Learning", "Python", "Matplotlib"],
+    category: "Machine Learning",
+    github: "https://github.com/SP3CTRE404/ImageRecognition",
+    date: "May 2023",
+    status: "Completed",
+    color: "#60A5FA", // Blue
+    colorClass: "from-blue-400 to-sky-500 shadow-sky-500/20 group-hover:shadow-sky-500/40",
   },
 ];
 // ✅ Updated props interface

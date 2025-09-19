@@ -32,6 +32,17 @@ const projects = [
     colorClass: "from-pink-400 to-rose-500 shadow-rose-500/20 group-hover:shadow-rose-500/40",
   },
   {
+    title: "Pneumonia Detection Using Deep Learning",
+    description: "This project is a full-stack AI system for detecting pneumonia from chest X-rays. I trained a ResNet18 deep learning model using PyTorch and transfer learning on the Kaggle dataset. To ensure high accuracy, class imbalance was addressed with a weighted loss function. The trained model is served via a Flask API backend to a sleek, futuristic web interface built with HTML, Tailwind CSS, and JavaScript, allowing for interactive, real-time image analysis and showcasing a complete MLOps workflow.",
+    tags: ["Deep Learning", "CNN", "Artificial Intelligent", "Python", "Flask Server", "PyTorch"],
+    category: "Machine Learning",
+    github: "https://github.com/SP3CTRE404/Pneumonia-Detection-System",
+    date: "September 2025",
+    status: "Completed",
+    color: "#60A5FA", // Blue
+    colorClass: "from-blue-400 to-sky-500 shadow-sky-500/20 group-hover:shadow-sky-500/40",
+  },
+  {
     title: "Sentiment Analyzer Using Gemini API",
     description: "A web application that analyzes the sentiment of any given text and classifies it as Positive, Negative, or Neutral. This tool leverages the advanced reasoning capabilities of Google's Gemini family of models to provide real-time, accurate sentiment analysis. The application follows a straightforward process: users input text, which is sent to the Gemini API for analysis. The API returns a single-word classification, which is then displayed to the user with a corresponding color.",
     tags: ["Google API", "Artificial Intelligent", "Python", "Streamlit", "Gemini"],

@@ -42,7 +42,7 @@ export function ExperienceSection() {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                   <div>
                     <h3 className="font-heading font-bold text-2xl mb-2 text-foreground">
-                      Business Applications Trainee
+                      SAP Development Intern
                     </h3>
                     <p className="font-body text-primary font-semibold text-lg">Future Labs Technology</p>
                   </div>

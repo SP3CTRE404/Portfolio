@@ -4,7 +4,7 @@ import { Briefcase, Calendar, Code, Database, Users } from "lucide-react"
 const experienceHighlights = [
   {
     icon: Code,
-    title: "SAP ABAP Development",
+    title: "SAP Development",
     description: "Designed and developed SAP applications with efficient coding practices",
   },
   {

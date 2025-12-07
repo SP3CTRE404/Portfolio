@@ -69,7 +69,7 @@ export function SkillsSection() {
         <div className="grid grid-cols-1 gap-12">
           <div className="animate-fade-in-up">
             <div className="text-center">
-              <h2 className="font-heading font-bold text-5xl md:text-6xl mb-6 gradient-text">Skils</h2>
+              <h2 className="font-heading font-bold text-5xl md:text-6xl mb-6 gradient-text">Skills</h2>
               <div className="space-y-6 text-lg leading-relaxed max-w-4xl mx-auto">
                 </div>
             </div>

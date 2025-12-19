@@ -10,13 +10,24 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 // ✅ The projects array is updated with your new data
 const projects = [
   {
+    title: "Distributed Linux Media System",
+    description: "A high-performance, bi-directional remote control system bridging an Android Client and Arch Linux Host using raw TCP Sockets. This project moves beyond standard API calls by managing kernel-level processes (mpv, yt-dlp) via Java ProcessBuilder for direct system control. It features a multi-threaded server architecture with predictive caching to achieve zero-latency playback and a custom 'Glassmorphism' UI built in Android XML.",
+    tags: ["Java", "Android Studio", "TCP Sockets", "Linux", "Multi-threading"],
+    category: "Systems Engineering",
+    github: "https://github.com/SP3CTRE404/Distributed-Linux-Media-System",
+    date: "December 2025",
+    status: "Completed",
+    color: "#10B981", // Emerald
+    colorClass: "from-emerald-400 to-green-500 shadow-green-500/20 group-hover:shadow-green-500/40",
+  },
+  {
     title: "Digital Twin System For Rumour Threat Analysis",
     description: "This project aims to develop an intelligent system capable of automatically assessing the potential threat of online rumors and misinformation. The core objective is to move beyond simple true/false detection and create a model that can provide a nuanced, quantitative harmfulness score for a given rumor. This score helps to prioritize moderation efforts, understand public reaction, and mitigate the real-world impact of fake news.\n\n The ultimate vision is to integrate this model into a Digital Twin of a social network environment. This would allow for real-time monitoring and simulation, enabling platform managers to predict the trajectory and potential damage of a rumor before it spreads widely.",
     tags: ["Digital Twin", "Python", "PyTorch", "Machine Learning"],
     category: "Machine Learning",
     github: "https://github.com/SP3CTRE404/Digital-Twin-Systems-for-Rumor-Analysis",
     date: "Ongoing",
-    status: "In Progress",
+    status: "Completed",
     color: "#818CF8", // Indigo
     colorClass: "from-indigo-400 to-purple-500 shadow-purple-500/20 group-hover:shadow-purple-500/40",
   },
@@ -27,7 +38,7 @@ const projects = [
     category: "Mobile Development",
     github: "https://github.com/SP3CTRE404/Who-Let-Me-Cook",
     date: "Ongoing",
-    status: "In Progress",
+    status: "Completed",
     color: "#F472B6", // Pink
     colorClass: "from-pink-400 to-rose-500 shadow-rose-500/20 group-hover:shadow-rose-500/40",
   },

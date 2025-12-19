@@ -21,7 +21,7 @@ export function AboutSection() {
           {/* Right Column: Text Content */}
           <div className="relative animate-fade-in-up border-l-2 border-primary pl-8">
             <p className="font-body text-lg text-muted-foreground mb-4 leading-relaxed">
-              I am a detail-oriented engineering student with a strong focus on AI, Java, and .NET development, passionate about building intelligent, scalable, and high-performance software solutions. My hands-on experience spans across developing enterprise applications with SAP ABAP, designing intelligent systems with machine learning, and crafting robust applications in Java and .NET MAUI.
+              Software Engineer specializing in Machine Learning, mobile development, .NET, and enterprise systems optimization. Expertise includes CNN models, transfer learning, and ML/API deployment (Flask). Interested in Java development and AI engineering. Proficient in software architecture, DSA, OOP, and building scalable, multi-platform solutions across mobile, ML, and backend ecosystems.
             </p>
             <p className="font-body text-lg text-muted-foreground leading-relaxed">
               I thrive on solving complex technical challenges and continuously expanding my expertise across modern development stacks, enabling me to adapt to diverse environments and contribute effectively to cutting-edge projects.

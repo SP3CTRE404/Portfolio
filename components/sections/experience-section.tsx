@@ -42,7 +42,7 @@ export function ExperienceSection() {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                   <div>
                     <h3 className="font-heading font-bold text-2xl mb-2 text-foreground">
-                      SAP Development Intern
+                      Enterprise Software Intern
                     </h3>
                     <p className="font-body text-primary font-semibold text-lg">Future Labs Technology</p>
                   </div>
@@ -54,16 +54,13 @@ export function ExperienceSection() {
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
                   <p>
-                    • Designed, developed, and maintained features for SAP applications using ABAP to enhance business
-                    processes.
+                    • Optimized enterprise workflow, automation, reducing manual processing time by redesigning legacy data modules.
                   </p>
                   <p>
-                    • Applied efficient coding practices and data modelling techniques to improve application
-                    performance and stability.
+                    • Engineered custom data models and optimized database queries, resulting in significant performance gains for high-volume reporting.
                   </p>
                   <p>
-                    • Collaborated in a professional development environment to debug and resolve technical issues,
-                    strengthening problem-solving skills.
+                    • Debugged and maintained production-grade software, identifying and resolving critical logic errors in live environments.
                   </p>
                 </div>
 

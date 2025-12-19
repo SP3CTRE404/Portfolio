@@ -1,10 +1,10 @@
 "use client";
 
 const skills = [
-  'Next.js', 'TypeScript', 'React',
-  'TailwindCSS', 'Python', 'Machine Learning',
-  'Java', 'SAP ABAP', 'Android Dev',
-  'Git', 'C#', 'C++',
+  'Java', 'C++', 'C#', 'Python', 'TypeScript',
+  'Machine Learning', 'LLMs', 'PyTorch',
+  '.NET MAUI', 'Flask', 'Android Development',
+  'Linux', 'Git', 'SAP ABAP', 'Docker'
 ];
 
 export function HeroTerminal() {
@@ -37,7 +37,6 @@ export function HeroTerminal() {
             <div><span className="text-purple-400">class</span> Profile {'{\n'}</div>
             <div><span className="text-purple-400"> public:</span> </div>
             <div className="pl-4"><span className="text-teal-400">string</span> <span className="text-cyan-400">name</span> = <span className="text-orange-400">"Udit Aggarwal"</span>;</div>
-            <div className="pl-4"><span className="text-teal-400">string</span> <span className="text-cyan-400">title</span> = <span className="text-orange-400">"Software Developer & Engineer"</span>;</div>
             <div className="pl-4"><span className="text-teal-400">vector{'<string>'}</span> <span className="text-cyan-400">skills</span> = {'{\n'}</div>
 
             {skillChunks.map((chunk, chunkIndex) => (
@@ -61,7 +60,7 @@ export function HeroTerminal() {
             <div className="pl-4"><span className="text-purple-400">bool</span> <span className="text-cyan-400">isQuickLearner</span> = <span className="text-purple-400">true</span>;</div>
             <div className="pl-4"><span className="text-purple-400">bool</span> <span className="text-cyan-400">isProblemSolver</span> = <span className="text-purple-400">true</span>;</div>
           
-            <div className="pl-4"><span className="text-purple-400">bool</span> <span className="text-cyan-400">isHireable</span>() {'{\n'}</div>
+            <div className="pl-4"><span className="text-purple-400">bool</span> <span className="text-cyan-400">readyToWork</span>() {'{\n'}</div>
             <div className="pl-8"><span className="text-purple-400">return</span> <span className="text-cyan-400">true</span></div>
             <div className="pl-4">{'}'}</div>
             <div>{'};'}</div>

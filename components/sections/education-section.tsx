@@ -5,8 +5,8 @@ const educationData = [
   {
     degree: "B. Tech in Computer Science and Engineering",
     institution: "Amity University, NOIDA",
-    period: "Expected 2026",
-    grade: "CGPA: 7.4",
+    period: "Expected June 2026",
+    grade: "CGPA: 7.45",
   },
   {
     degree: "CBSE Board",

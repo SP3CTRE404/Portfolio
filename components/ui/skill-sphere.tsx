@@ -4,10 +4,10 @@ import { useEffect } from 'react';
 import TagCloud from 'TagCloud';
 
 const texts = [
-  'Next.js', 'React', 'TypeScript',
-  'TailwindCSS', 'Python', 'Git',
-  'Machine Learning', 'Java', 'SAP', '.NET',
-  'Android', 'C#', 'C++', 'Vercel', 'PyTorch'
+  'Spring Boot', 'ASP.NET Core', 'Flutter',
+  'Java', 'C#', 'Dart', 'PostgreSQL', 'Docker',
+  'Git', 'Linux', 'RESTful APIs', 'JWT Security',
+  'EF Core', 'JPA/Hibernate', 'Next.js', 'TailwindCSS'
 ];
 
 export function SkillSphere() {

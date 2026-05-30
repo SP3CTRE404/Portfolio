@@ -1,21 +1,21 @@
 import { HolographicCard } from "@/components/ui/holographic-card"
-import { Briefcase, Calendar, Code, Database, Users } from "lucide-react"
+import { Briefcase, Calendar, Smartphone, Terminal, Users } from "lucide-react"
 
 const experienceHighlights = [
   {
-    icon: Code,
-    title: "SAP Development",
-    description: "Designed and developed SAP applications with efficient coding practices",
+    icon: Smartphone,
+    title: "Flutter & Dart",
+    description: "Developing production-grade cross-platform apps with top-tier UI/UX standards.",
   },
   {
-    icon: Database,
-    title: "Data Modeling",
-    description: "Applied data modeling techniques to improve application performance",
+    icon: Terminal,
+    title: "Code Refactoring",
+    description: "Resolving technical debt and implementing features in complex codebases.",
   },
   {
     icon: Users,
-    title: "Team Collaboration",
-    description: "Worked in professional development environment with cross-functional teams",
+    title: "Agile Coordination",
+    description: "Coordinating across functional units to streamline development lifecycles.",
   },
 ]
 
@@ -28,7 +28,7 @@ export function ExperienceSection() {
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-5xl md:text-6xl mb-6 gradient-text">Work Experience</h2>
           <p className="font-body text-xl text-muted-foreground max-w-2xl mx-auto">
-            Professional experience in software development and business applications
+            Professional experience in software engineering and mobile development
           </p>
         </div>
 
@@ -42,25 +42,25 @@ export function ExperienceSection() {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                   <div>
                     <h3 className="font-heading font-bold text-2xl mb-2 text-foreground">
-                      Enterprise Software Intern
+                      Software Engineer Intern (Flutter)
                     </h3>
-                    <p className="font-body text-primary font-semibold text-lg">Future Labs Technology</p>
+                    <p className="font-body text-primary font-semibold text-lg">UXDLAB Software</p>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Calendar size={18} />
-                    <span className="font-body">Jun 2025 – Aug 2025</span>
+                    <span className="font-body">March 2026 – Present</span>
                   </div>
                 </div>
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
                   <p>
-                    • Optimized enterprise workflow, automation, reducing manual processing time by redesigning legacy data modules.
+                    • Developing and maintaining production-grade cross-platform applications using Flutter, ensuring feature stability and high-quality UI/UX standards.
                   </p>
                   <p>
-                    • Engineered custom data models and optimized database queries, resulting in significant performance gains for high-volume reporting.
+                    • Analyzing and navigating complex existing codebases to implement feature enhancements and resolve technical debt within established architectures.
                   </p>
                   <p>
-                    • Debugged and maintained production-grade software, identifying and resolving critical logic errors in live environments.
+                    • Strengthening team dynamics by coordinating across functional units, gaining hands-on experience in collaborative development and professional life cycles.
                   </p>
                 </div>
 

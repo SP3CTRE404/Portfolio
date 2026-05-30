@@ -1,10 +1,9 @@
 "use client";
 
 const skills = [
-  'Java', 'C++', 'C#', 'Python', 'TypeScript',
-  'Machine Learning', 'LLMs', 'PyTorch',
-  '.NET MAUI', 'Flask', 'Android Development',
-  'Linux', 'Git', 'SAP ABAP', 'Docker'
+  'Java', 'Dart', 'C#', 'Spring Boot', 'ASP.NET Core',
+  'Flutter', 'PostgreSQL', 'Docker', 'Git', 'Linux',
+  'RESTful APIs', 'JWT Security', 'EF Core', 'JPA/Hibernate'
 ];
 
 export function HeroTerminal() {
@@ -22,22 +21,20 @@ export function HeroTerminal() {
         <div className="h-3 w-3 rounded-full bg-yellow-500 mr-2"></div>
         <div className="h-3 w-3 rounded-full bg-green-500"></div>
         <div className="ml-4 px-3 py-1 text-xs font-mono text-gray-300 bg-gray-800 rounded-md">
-          developer.cpp
+          Profile.java
         </div>
       </div>
 
-      {/* C++ Code Snippet Body */}
+      {/* Java Code Snippet Body */}
       <div className="p-4 font-mono text-sm text-gray-300 min-h-[300px] overflow-x-auto">
         <pre>
           <code>
-            <div><span className="text-gray-500">#include</span> <span className="text-orange-400">{'<vector>'}</span></div>
-            <div><span className="text-gray-500">#include</span> <span className="text-orange-400">{'<string>'}</span></div>
-            <div><span className="text-gray-500">using namespace</span> <span className="text-orange-400">{'std;'}</span></div>
+            <div><span className="text-purple-400">import</span> <span className="text-cyan-400">java.util.List</span>;</div>
+            <div><span className="text-purple-400">import</span> <span className="text-cyan-400">java.util.Arrays</span>;</div>
             <br />
-            <div><span className="text-purple-400">class</span> Profile {'{\n'}</div>
-            <div><span className="text-purple-400"> public:</span> </div>
-            <div className="pl-4"><span className="text-teal-400">string</span> <span className="text-cyan-400">name</span> = <span className="text-orange-400">"Udit Aggarwal"</span>;</div>
-            <div className="pl-4"><span className="text-teal-400">vector{'<string>'}</span> <span className="text-cyan-400">skills</span> = {'{\n'}</div>
+            <div><span className="text-purple-400">public class</span> <span className="text-teal-400">Profile</span> {'{\n'}</div>
+            <div className="pl-4"><span className="text-purple-400">public String</span> <span className="text-cyan-400">name</span> = <span className="text-orange-400">"Udit Aggarwal"</span>;</div>
+            <div className="pl-4"><span className="text-purple-400">public List&lt;String&gt;</span> <span className="text-cyan-400">skills</span> = <span className="text-cyan-400">Arrays</span>.<span className="text-cyan-400">asList</span>({'(\n'}</div>
 
             {skillChunks.map((chunk, chunkIndex) => (
               <span key={chunkIndex}>
@@ -53,17 +50,16 @@ export function HeroTerminal() {
               </span>
             ))}
 
-            <div className="pl-4">{'}'}{'\n'}
+            <div className="pl-4">{');'}{'\n'}
             
-            {/* 👇 NEW BOOLEAN MEMBERS ADDED HERE 👇 */}
-            <div className="pl-4"><span className="text-purple-400">bool</span> <span className="text-cyan-400">isHardWorker</span> = <span className="text-purple-400">true</span>;</div>
-            <div className="pl-4"><span className="text-purple-400">bool</span> <span className="text-cyan-400">isQuickLearner</span> = <span className="text-purple-400">true</span>;</div>
-            <div className="pl-4"><span className="text-purple-400">bool</span> <span className="text-cyan-400">isProblemSolver</span> = <span className="text-purple-400">true</span>;</div>
-          
-            <div className="pl-4"><span className="text-purple-400">bool</span> <span className="text-cyan-400">readyToWork</span>() {'{\n'}</div>
-            <div className="pl-8"><span className="text-purple-400">return</span> <span className="text-cyan-400">true</span></div>
+            <div className="pl-4"><span className="text-purple-400">public boolean</span> <span className="text-cyan-400">isHardWorker</span> = <span className="text-purple-400">true</span>;</div>
+            <div className="pl-4"><span className="text-purple-400">public boolean</span> <span className="text-cyan-400">isQuickLearner</span> = <span className="text-purple-400">true</span>;</div>
+            <div className="pl-4"><span className="text-purple-400">public boolean</span> <span className="text-cyan-400">isProblemSolver</span> = <span className="text-purple-400">true</span>;</div>
+            <br />
+            <div className="pl-4"><span className="text-purple-400">public boolean</span> <span className="text-cyan-400">readyToWork</span>() {'{\n'}</div>
+            <div className="pl-8"><span className="text-purple-400">return</span> <span className="text-cyan-400">true</span>;</div>
             <div className="pl-4">{'}'}</div>
-            <div>{'};'}</div>
+            <div>{'}'}</div>
             </div>
           </code>
         </pre>

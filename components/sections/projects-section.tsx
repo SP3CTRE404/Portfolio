@@ -10,70 +10,37 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 // ✅ The projects array is updated with your new data
 const projects = [
   {
-    title: "Distributed Linux Media System",
-    description: "A high-performance, bi-directional remote control system bridging an Android Client and Arch Linux Host using raw TCP Sockets. This project moves beyond standard API calls by managing kernel-level processes (mpv, yt-dlp) via Java ProcessBuilder for direct system control. It features a multi-threaded server architecture with predictive caching to achieve zero-latency playback and a custom 'Glassmorphism' UI built in Android XML.",
-    tags: ["Java", "Android Studio", "TCP Sockets", "Linux", "Multi-threading"],
-    category: "Systems Engineering",
-    github: "https://github.com/SP3CTRE404/Distributed-Linux-Media-System",
-    date: "December 2025",
+    title: "Implementation of Subscription Management Backend Using ASP.NET",
+    description: "Engineered a RESTful API using ASP.NET Core and C#, implementing JWT security and Entity Framework Core (EF Core) for data persistence. Undertook this project as a dedicated learning initiative to master ASP.NET Core, C#, and Entity Framework Core, successfully implementing user authentication, subscription data management, and payment processing functionalities. Configured and deployed the API to a production-like environment using Docker containers for consistent, isolated, and scalable deployment.",
+    tags: ["ASP.NET Core", "C#", "Entity Framework Core", "JWT Security", "Docker"],
+    category: "Backend Development",
+    github: "https://github.com/SP3CTRE404/Subscription-Management-Backend-ASP.NET",
+    date: "May 2026",
     status: "Completed",
-    color: "#10B981", // Emerald
-    colorClass: "from-emerald-400 to-green-500 shadow-green-500/20 group-hover:shadow-green-500/40",
+    color: "#60A5FA", // Blue
+    colorClass: "from-blue-400 to-sky-500 shadow-sky-500/20 group-hover:shadow-sky-500/40",
   },
   {
-    title: "Digital Twin System For Rumour Threat Analysis",
-    description: "This project aims to develop an intelligent system capable of automatically assessing the potential threat of online rumors and misinformation. The core objective is to move beyond simple true/false detection and create a model that can provide a nuanced, quantitative harmfulness score for a given rumor. This score helps to prioritize moderation efforts, understand public reaction, and mitigate the real-world impact of fake news.\n\n The ultimate vision is to integrate this model into a Digital Twin of a social network environment. This would allow for real-time monitoring and simulation, enabling platform managers to predict the trajectory and potential damage of a rumor before it spreads widely.",
-    tags: ["Digital Twin", "Python", "PyTorch", "Machine Learning"],
-    category: "Machine Learning",
-    github: "https://github.com/SP3CTRE404/Digital-Twin-Systems-for-Rumor-Analysis",
-    date: "Ongoing",
-    status: "Completed",
-    color: "#818CF8", // Indigo
-    colorClass: "from-indigo-400 to-purple-500 shadow-purple-500/20 group-hover:shadow-purple-500/40",
-  },
-  {
-    title: "Who Let Me Cook! - AI Powered Recipe App",
-    description: "Who Let Me Cook! is a mobile recipe app built with .NET MAUI (C#/XAML) and the MVVM architecture. It fetches data from TheMealDB API and uses the Google Gemini API for its core intelligence. The app dynamically simplifies complex cooking instructions and automatically scales ingredient quantities based on the user's selected serving size. This creates a highly adaptive and user-friendly experience, making sophisticated recipes accessible to cooks of all skill levels.",
-    tags: [".NET MAUI", "C#", "XAML", "Gemini API", "MVVM"],
+    title: "Premio – Subscription Management Mobile App (Flutter)",
+    description: "Developed a cross-platform mobile application using Flutter and Dart to centralize and monitor recurring expenses with a high-performance, smooth UI. Implemented robust state management and local caching mechanisms to ensure real-time data synchronization and offline readiness. Designed a premium user experience featuring custom animations and a modern glassmorphic interface, integrating secure API consumption layers to handle complex asynchronous data streams.",
+    tags: ["Flutter", "Dart", "State Management", "UI/UX Design", "REST APIs"],
     category: "Mobile Development",
-    github: "https://github.com/SP3CTRE404/Who-Let-Me-Cook",
-    date: "Ongoing",
+    github: "https://github.com/SP3CTRE404/Premio-Subscription-Management-Mobile-App",
+    date: "January 2026",
     status: "Completed",
     color: "#F472B6", // Pink
     colorClass: "from-pink-400 to-rose-500 shadow-rose-500/20 group-hover:shadow-rose-500/40",
   },
   {
-    title: "Pneumonia Detection Using Deep Learning",
-    description: "This project is a full-stack AI system for detecting pneumonia from chest X-rays. I trained a ResNet18 deep learning model using PyTorch and transfer learning on the Kaggle dataset. To ensure high accuracy, class imbalance was addressed with a weighted loss function. The trained model is served via a Flask API backend to a sleek, futuristic web interface built with HTML, Tailwind CSS, and JavaScript, allowing for interactive, real-time image analysis and showcasing a complete MLOps workflow.",
-    tags: ["Deep Learning", "CNN", "Artificial Intelligent", "Python", "Flask Server", "PyTorch"],
-    category: "Machine Learning",
-    github: "https://github.com/SP3CTRE404/Pneumonia-Detection-System",
-    date: "September 2025",
+    title: "Premio – Subscription Management Backend (Spring Boot)",
+    description: "Engineered a robust RESTful backend using Spring Boot and Java to handle high-concurrency requests and manage core subscription business logic. Implemented JWT-based security using Spring Security, utilized JPA/Hibernate for optimized Object-Relational Mapping (ORM) and query efficiency, and architected automated background services for billing reminders. Designed and implemented a robust data model in PostgreSQL to efficiently store and query user profiles, subscription plans, and payment history records.",
+    tags: ["Spring Boot", "Java", "Spring Security", "JPA/Hibernate", "PostgreSQL"],
+    category: "Backend Development",
+    github: "https://github.com/SP3CTRE404/Premio-Subscription-Management-Backend",
+    date: "January 2026",
     status: "Completed",
-    color: "#60A5FA", // Blue
-    colorClass: "from-blue-400 to-sky-500 shadow-sky-500/20 group-hover:shadow-sky-500/40",
-  },
-  {
-    title: "Sentiment Analyzer Using Gemini API",
-    description: "A web application that analyzes the sentiment of any given text and classifies it as Positive, Negative, or Neutral. This tool leverages the advanced reasoning capabilities of Google's Gemini family of models to provide real-time, accurate sentiment analysis. The application follows a straightforward process: users input text, which is sent to the Gemini API for analysis. The API returns a single-word classification, which is then displayed to the user with a corresponding color.",
-    tags: ["Google API", "Artificial Intelligent", "Python", "Streamlit", "Gemini"],
-    category: "Machine Learning",
-    github: "https://github.com/SP3CTRE404/Sentiment-Analyzer",
-    date: "September 2025",
-    status: "Completed",
-    color: "#60A5FA", // Blue
-    colorClass: "from-blue-400 to-sky-500 shadow-sky-500/20 group-hover:shadow-sky-500/40",
-  },
-  {
-    title: "Image Recognition on FashionMNIST Using CNN",
-    description: "Implemented a Convolutional Neural Network to classify images of clothing articles from the FashionMNIST dataset. Pre-processed data using rescaling and augmentation techniques to improve model generalization and prevent overfitting. Achieved 94% validation accuracy by engineering a network with Conv2D, MaxPooling2D, and Dropout layers for enhanced performance.",
-    tags: ["PyTorch", "CNN", "Deep Learning", "Python", "Matplotlib"],
-    category: "Machine Learning",
-    github: "https://github.com/SP3CTRE404/ImageRecognition",
-    date: "May 2023",
-    status: "Completed",
-    color: "#60A5FA", // Blue
-    colorClass: "from-blue-400 to-sky-500 shadow-sky-500/20 group-hover:shadow-sky-500/40",
+    color: "#10B981", // Emerald
+    colorClass: "from-emerald-400 to-green-500 shadow-green-500/20 group-hover:shadow-green-500/40",
   },
 ];
 // ✅ Updated props interface

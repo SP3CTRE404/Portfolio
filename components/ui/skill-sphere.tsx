@@ -7,7 +7,9 @@ const texts = [
   'Spring Boot', 'ASP.NET Core', 'Flutter',
   'Java', 'C#', 'Dart', 'PostgreSQL', 'Docker',
   'Git', 'Linux', 'RESTful APIs', 'JWT Security',
-  'EF Core', 'JPA/Hibernate', 'Next.js', 'TailwindCSS'
+  'EF Core', 'JPA/Hibernate', 'Next.js', 'TailwindCSS',
+  'React', 'TypeScript', 'Python', 'Machine Learning',
+  'SAP', '.NET', 'Android', 'C++', 'Vercel', 'PyTorch'
 ];
 
 export function SkillSphere() {

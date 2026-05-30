@@ -8,46 +8,70 @@ import {
   Layers,
   TerminalSquare,
   GitMerge,
+  BrainCircuit,
+  MonitorSmartphone,
+  BriefcaseBusiness,
 } from "lucide-react";
-import { FaJava, FaLinux, FaGithub, FaCode } from "react-icons/fa";
+import { FaJava, FaLinux, FaGithub, FaCode, FaCss3, FaPython } from "react-icons/fa";
 import { SiSpringboot, SiDocker, SiPostgresql, SiNextdotjs } from "react-icons/si";
 import { TbBrandFlutter, TbBrandCSharp } from "react-icons/tb";
 
 const technicalSkills = {
-  "Languages": [
-    { name: "Java", icon: FaJava },
-    { name: "C#", icon: TbBrandCSharp },
-    { name: "Dart", icon: FaCode },
+  Frontend: [
+    { name: "TypeScript", icon: FaCode },
+    { name: "Tailwind CSS", icon: FaCss3 },
+    { name: "XAML", icon: FaCode },
   ],
-  "Frameworks": [
+  Backend: [
+    { name: "Java", icon: FaJava },
+    { name: "C++", icon: FaCode },
+    { name: "C#", icon: TbBrandCSharp },
+    { name: "Python", icon: FaPython },
+  ],
+  "Frameworks & Tools": [
     { name: "Spring Boot", icon: SiSpringboot },
     { name: "ASP.NET Core", icon: FaCode },
     { name: "Flutter", icon: TbBrandFlutter },
     { name: "Next.js & React", icon: SiNextdotjs },
+    { name: "Android SDK", icon: Smartphone },
+    { name: ".NET MAUI", icon: MonitorSmartphone },
+    { name: "Firebase", icon: MonitorSmartphone },
+    { name: "SQL", icon: Database },
   ],
-  "Databases & ORMs": [
+  "ML & Data": [
+    { name: "NumPy", icon: BrainCircuit },
+    { name: "Pandas", icon: BrainCircuit },
+    { name: "Scikit-learn", icon: BrainCircuit },
+    { name: "PyTorch", icon: BrainCircuit },
     { name: "PostgreSQL", icon: SiPostgresql },
     { name: "JPA / Hibernate", icon: Database },
-    { name: "Entity Framework (EF Core)", icon: Database },
-    { name: "RESTful APIs", icon: Cpu },
+    { name: "EF Core", icon: Database },
   ],
-  "Tools & DevOps": [
+  "Developer Tools": [
     { name: "Docker", icon: SiDocker },
-    { name: "Git & GitHub", icon: FaGithub },
+    { name: "Git / GitHub", icon: FaGithub },
     { name: "Linux", icon: FaLinux },
+    { name: "Visual Studio", icon: FaCode },
+    { name: "SAP ABAP", icon: BriefcaseBusiness },
   ],
-  "Concepts": [
+  Concepts: [
+    "DSA",
+    "Business Applications",
+    "OOPS",
+    "DBMS",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Deep Learning",
+    "Large Language Models",
+    "Mobile UI/UX Design",
     "RESTful API Design",
     "JWT Security & Auth",
-    "Object-Oriented Programming (OOP)",
-    "Data Structures & Algorithms (DSA)",
-    "Relational Databases (DBMS)",
     "High-Concurrency Systems",
     "Real-Time Data Sync",
-    "Docker Containerization",
     "State Management",
-    "Software Architecture"
-  ]
+    "Software Architecture",
+    "Docker Containerization"
+  ],
 };
 
 export function SkillsSection() {

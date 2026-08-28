@@ -5,17 +5,18 @@ import { useState, useEffect } from "react";
 // Layout and UI Components
 import { Navigation } from "@/components/layout/navigation";
 import { ScrollToTopButton } from "@/components/ui/scrolltotop";
+import { ParticleSystem } from "@/components/ui/particle-system";
 import ClientOnly from "@/components/client-only";
 
 // Section Components
 import { HeroSection } from "@/components/sections/hero-section";
-import { AboutSection } from "@/components/sections/about-section";
+// import { AboutSection } from "@/components/sections/about-section";
 import { ExperienceSection } from "@/components/sections/experience-section"; 
 import { SkillsSection } from "@/components/sections/skills-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
-import { CertificatesSection } from "@/components/sections/certificates-section";
-import { EducationSection } from "@/components/sections/education-section";
 import { ContactSection } from "@/components/sections/contact-section";
+
+// Page component representing the main landing page structure
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState("home");
@@ -71,14 +72,13 @@ export default function Page() {
         activeSection={activeSection} 
         onSectionChange={handleNavigate} 
       />
-      <main>
+      <ParticleSystem className="fixed inset-0 pointer-events-none z-0" colors={["#34d399", "#6ee7b7", "#a7f3d0"]} particleCount={40} />
+      <main className="relative z-10">
         <HeroSection onNavigate={handleNavigate} />
-        <AboutSection />
+        {/* <AboutSection /> */}
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
-        <CertificatesSection />
-        <EducationSection />
         <ContactSection />
       </main>
       <ScrollToTopButton />

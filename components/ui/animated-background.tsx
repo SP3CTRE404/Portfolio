@@ -14,7 +14,6 @@ interface Particle {
 
 export function AnimatedBackground() {
   const [particles, setParticles] = useState<Particle[]>([])
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
     // Initialize particles
@@ -29,11 +28,6 @@ export function AnimatedBackground() {
         opacity: Math.random() * 0.5 + 0.1,
       }))
       setParticles(initialParticles)
-    }
-
-    // Mouse move handler
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
     }
 
     // Animation loop
@@ -63,11 +57,9 @@ export function AnimatedBackground() {
     }
 
     if (typeof window !== 'undefined') {
-      window.addEventListener("mousemove", handleMouseMove)
       const interval = setInterval(animateParticles, 50)
 
       return () => {
-        window.removeEventListener("mousemove", handleMouseMove)
         clearInterval(interval)
       }
     }
@@ -75,14 +67,6 @@ export function AnimatedBackground() {
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
-      {/* Gradient overlay */}
-      <div
-        className="absolute inset-0 opacity-20 transition-all duration-1000"
-        style={{
-          background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(139, 92, 246, 0.1), transparent 50%)`,
-        }}
-      />
-
       {/* Floating particles */}
       {particles.map((particle) => (
         <div
@@ -94,22 +78,10 @@ export function AnimatedBackground() {
             width: `${particle.size}px`,
             height: `${particle.size}px`,
             opacity: particle.opacity,
-            boxShadow: `0 0 ${particle.size * 2}px rgba(139, 92, 246, 0.5)`,
           }}
         />
       ))}
 
-      {/* Grid pattern */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: "50px 50px",
-        }}
-      />
     </div>
   )
 }

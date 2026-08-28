@@ -3,9 +3,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, FileText } from "lucide-react"; 
-import { useTheme } from "@/components/theme-provider";
 import { motion, AnimatePresence } from "framer-motion";
-import { HeroTerminal } from "@/components/ui/hero-terminal";
+import Image from "next/image";
 
 const greetings = [
   "Hello",
@@ -26,7 +25,6 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ onNavigate }: HeroSectionProps) {
-  const { actualTheme } = useTheme();
   const [greetingIndex, setGreetingIndex] = useState(0);
 
   useEffect(() => {
@@ -37,14 +35,14 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden p-4">
+    <section id="home" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-[#064E3B] p-4">
       <div className="relative z-10 w-full max-w-6xl mx-auto">
         
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
 
           {/* Left Column: Name, Greeting, and now Buttons */}
           <div className="md:w-1/2 text-center md:text-left">
-            <div className="font-heading text-4xl md:text-5xl font-semibold text-gray-400 mb-2 h-16 flex items-center justify-center md:justify-start">
+            <div className="font-body text-sm uppercase tracking-[0.2em] font-semibold text-emerald-100 mb-2 h-16 flex items-center justify-center md:justify-start">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={greetingIndex}
@@ -59,7 +57,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
             </div>
             
             {/* 👇 FONT SIZE REDUCED HERE 👇 */}
-            <h1 className="font-heading font-bold text-5xl md:text-7xl lg:text-8xl bg-gradient-to-r from-purple-400 to-teal-400 text-transparent bg-clip-text leading-tight">
+            <h1 className="font-heading font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight text-white leading-tight">
               I'm Udit Aggarwal
             </h1>
 
@@ -69,18 +67,14 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
                   <Button
                     size="lg"
                     onClick={() => onNavigate("projects")}
-                    className={`font-body font-semibold hover-lift neon-border ${
-                      actualTheme === "dark" ? "animate-glow" : ""
-                    }`}
+                    className="rounded-full bg-[#10B981] text-white font-body font-semibold hover:bg-emerald-600 transition-colors"
                   >
                     View Projects
                   </Button>
                   <a href="/Udit-Aggarwal-Resume.pdf" target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
-                      className={`font-body font-semibold hover-lift neon-border w-full sm:w-auto ${
-                        actualTheme === "dark" ? "animate-glow" : ""
-                      }`}
+                      className="rounded-full border border-emerald-100/70 bg-transparent text-white font-body font-semibold hover:bg-emerald-900 transition-colors w-full sm:w-auto"
                     >
                       <FileText size={18} className="mr-2" />
                       View Resume
@@ -89,9 +83,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
                   <Button
                     size="lg"
                     onClick={() => onNavigate("contact")}
-                    className={`font-body font-semibold hover-lift neon-border ${
-                      actualTheme === "dark" ? "animate-glow" : ""
-                    }`}
+                    className="rounded-full border border-emerald-100/70 bg-transparent text-white font-body font-semibold hover:bg-emerald-900 transition-colors"
                   >
                     Get In Touch
                   </Button>
@@ -99,9 +91,16 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
               </div>
             </div>
   
-            {/* Right Column: Terminal */}
+            {/* Right Column: Profile photo */}
             <div className="w-full md:w-1/2 max-w-lg">
-              <HeroTerminal />
+              <Image
+                src="/udit.png"
+                alt="Udit Aggarwal"
+                width={520}
+                height={520}
+                priority
+                className="w-full aspect-square object-cover rounded-t-[3rem] rounded-b-2xl border border-emerald-100/40"
+              />
             </div>
   
           </div>
@@ -112,9 +111,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
             size="icon"
             variant="ghost"
             onClick={() => onNavigate("about")}
-            className={`rounded-full h-12 w-12 ${
-              actualTheme === "dark" ? "text-primary animate-bounce hover-animate-none" : ""
-            }`}
+            className="rounded-full h-12 w-12 text-emerald-100 hover:text-white hover:bg-emerald-900"
           >
             <ChevronDown size={32} />
           </Button>

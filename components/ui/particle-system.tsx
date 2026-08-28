@@ -100,7 +100,7 @@ export function ParticleSystem({
             width: `${particle.size}px`,
             height: `${particle.size}px`,
             opacity: particle.opacity,
-            background: `radial-gradient(circle, ${particle.color}80 0%, transparent 70%)`,
+            background: particle.color,
           }}
         />
       ))}

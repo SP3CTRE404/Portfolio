@@ -11,10 +11,9 @@ interface TypingAnimationProps {
   onComplete?: () => void
 }
 
-export function TypingAnimation({ text, className, speed = 100, showCursor = true, onComplete }: TypingAnimationProps) {
+export function TypingAnimation({ text, className, speed = 70, showCursor = true, onComplete }: TypingAnimationProps) {
   const [displayText, setDisplayText] = useState("")
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [showCursorBlink, setShowCursorBlink] = useState(true)
 
   useEffect(() => {
     if (currentIndex < text.length) {
@@ -29,25 +28,13 @@ export function TypingAnimation({ text, className, speed = 100, showCursor = tru
     }
   }, [currentIndex, text, speed, onComplete])
 
-  useEffect(() => {
-    if (showCursor) {
-      const cursorInterval = setInterval(() => {
-        setShowCursorBlink((prev) => !prev)
-      }, 500)
-
-      return () => clearInterval(cursorInterval)
-    }
-  }, [showCursor])
-
   return (
-    <span className={cn("inline-block", className)}>
-      {displayText}
+    <span className={cn("inline-flex items-center font-mono tracking-tight text-stone-900", className)}>
+      <span>{displayText}</span>
       {showCursor && (
         <span
-          className={cn(
-            "inline-block w-0.5 h-[1em] bg-primary ml-1 transition-opacity duration-100",
-            showCursorBlink ? "opacity-100" : "opacity-0",
-          )}
+          className="inline-block w-[2.5px] h-[1.15em] bg-emerald-600 ml-1 rounded-full animate-pulse shrink-0"
+          aria-hidden="true"
         />
       )}
     </span>

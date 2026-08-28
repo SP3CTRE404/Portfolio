@@ -18,16 +18,16 @@ export function ThemeAwareCard({ children, className, variant = "default" }: The
   const variantClasses = {
     default: "bg-card border-border",
     glass: "glass-card",
-    neon: "neon-border glass-card",
-    holographic: "glass-card animate-hologram-flicker",
+    neon: "glass-card",
+    holographic: "glass-card",
   }
 
   const themeSpecificClasses = {
     dark: {
       default: "shadow-lg shadow-primary/10",
       glass: "shadow-xl shadow-primary/20",
-      neon: "shadow-2xl shadow-primary/30 animate-glow",
-      holographic: "shadow-2xl shadow-accent/20",
+      neon: "shadow-sm",
+      holographic: "shadow-sm",
     },
     light: {
       default: "shadow-md",

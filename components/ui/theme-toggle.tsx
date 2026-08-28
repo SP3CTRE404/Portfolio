@@ -11,7 +11,7 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ className, showLabel = false }: ThemeToggleProps) {
-  const { theme, setTheme, actualTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {
     if (theme === "dark") {
@@ -26,13 +26,13 @@ export function ThemeToggle({ className, showLabel = false }: ThemeToggleProps) 
   const getIcon = () => {
     switch (theme) {
       case "light":
-        return <Sun size={18} />
+        return <Sun size={16} className="text-amber-600 transition-transform duration-300 group-hover:rotate-45" />
       case "dark":
-        return <Moon size={18} />
+        return <Moon size={16} className="text-emerald-700 transition-transform duration-300 group-hover:-rotate-12" />
       case "system":
-        return <Monitor size={18} />
+        return <Monitor size={16} className="text-stone-600 transition-transform duration-300 group-hover:scale-105" />
       default:
-        return <Moon size={18} />
+        return <Moon size={16} className="text-stone-600" />
     }
   }
 
@@ -55,17 +55,16 @@ export function ThemeToggle({ className, showLabel = false }: ThemeToggleProps) 
       size={showLabel ? "sm" : "icon"}
       onClick={toggleTheme}
       className={cn(
-        "hover-lift glass-card bg-transparent transition-all duration-300",
-        actualTheme === "dark" && "animate-glow",
-        className,
+        "group rounded-full bg-white/70 border border-stone-200/70 hover:bg-white hover:border-stone-300 text-stone-700 shadow-xs backdrop-blur-sm transition-all duration-200",
+        showLabel && "px-3.5 py-1.5 h-auto",
+        className
       )}
       title={`Switch to ${theme === "dark" ? "light" : theme === "light" ? "system" : "dark"} theme`}
     >
-      <div className="relative">
+      <div className="flex items-center justify-center">
         {getIcon()}
-        <div className="absolute inset-0 bg-primary/20 rounded-full opacity-0 animate-pulse" />
+        {showLabel && <span className="ml-2 font-mono text-xs font-medium text-stone-700">{getLabel()}</span>}
       </div>
-      {showLabel && <span className="ml-2 font-body text-sm">{getLabel()}</span>}
     </Button>
   )
 }

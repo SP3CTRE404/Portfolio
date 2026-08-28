@@ -1,150 +1,174 @@
-import { Badge } from "@/components/ui/badge";
-import { HolographicCard } from "@/components/ui/holographic-card";
-import {
-  Code,
-  Smartphone,
-  Database,
-  Cpu,
-  Layers,
-  TerminalSquare,
-  GitMerge,
-  BrainCircuit,
-  MonitorSmartphone,
-  BriefcaseBusiness,
-} from "lucide-react";
-import { FaJava, FaLinux, FaGithub, FaCode, FaCss3, FaPython } from "react-icons/fa";
-import { SiSpringboot, SiDocker, SiPostgresql, SiNextdotjs } from "react-icons/si";
-import { TbBrandFlutter, TbBrandCSharp } from "react-icons/tb";
+"use client";
 
-const technicalSkills = {
-  Frontend: [
-    { name: "TypeScript", icon: FaCode },
-    { name: "Tailwind CSS", icon: FaCss3 },
-    { name: "XAML", icon: FaCode },
-  ],
-  Backend: [
-    { name: "Java", icon: FaJava },
-    { name: "C++", icon: FaCode },
-    { name: "C#", icon: TbBrandCSharp },
-    { name: "Python", icon: FaPython },
-  ],
-  "Frameworks & Tools": [
-    { name: "Spring Boot", icon: SiSpringboot },
-    { name: "ASP.NET Core", icon: FaCode },
-    { name: "Flutter", icon: TbBrandFlutter },
-    { name: "Next.js & React", icon: SiNextdotjs },
-    { name: "Android SDK", icon: Smartphone },
-    { name: ".NET MAUI", icon: MonitorSmartphone },
-    { name: "Firebase", icon: MonitorSmartphone },
-    { name: "SQL", icon: Database },
-  ],
-  "ML & Data": [
-    { name: "NumPy", icon: BrainCircuit },
-    { name: "Pandas", icon: BrainCircuit },
-    { name: "Scikit-learn", icon: BrainCircuit },
-    { name: "PyTorch", icon: BrainCircuit },
-    { name: "PostgreSQL", icon: SiPostgresql },
-    { name: "JPA / Hibernate", icon: Database },
-    { name: "EF Core", icon: Database },
-  ],
-  "Developer Tools": [
-    { name: "Docker", icon: SiDocker },
-    { name: "Git / GitHub", icon: FaGithub },
-    { name: "Linux", icon: FaLinux },
-    { name: "Visual Studio", icon: FaCode },
-    { name: "SAP ABAP", icon: BriefcaseBusiness },
-  ],
-  Concepts: [
-    "DSA",
-    "Business Applications",
-    "OOPS",
-    "DBMS",
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Deep Learning",
-    "Large Language Models",
-    "Mobile UI/UX Design",
-    "RESTful API Design",
-    "JWT Security & Auth",
-    "High-Concurrency Systems",
-    "Real-Time Data Sync",
-    "State Management",
-    "Software Architecture",
-    "Docker Containerization"
-  ],
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaJava, FaLinux, FaPython, FaDocker } from "react-icons/fa";
+import { SiSpringboot, SiPostgresql, SiPytorch } from "react-icons/si";
+import { TbBrandFlutter, TbBrandCSharp } from "react-icons/tb";
+import { Server, Brain, Database, Terminal, Cpu, Award, ExternalLink } from "lucide-react";
+
+const skillCategories = [
+  {
+    title: "Core & Backend",
+    icon: Server,
+    accent: "emerald",
+    span: "md:col-span-4",
+    skills: [
+      { name: "Java", icon: FaJava },
+      { name: "C#", icon: TbBrandCSharp },
+      { name: "Spring Boot", icon: SiSpringboot },
+      { name: "ASP.NET", icon: Server },
+      { name: "RESTful APIs", icon: Terminal },
+    ],
+  },
+  {
+    title: "Mobile & Cross-Platform",
+    icon: Cpu,
+    accent: "blue",
+    span: "md:col-span-2",
+    skills: [
+      { name: "Flutter", icon: TbBrandFlutter },
+      { name: "Dart", icon: TbBrandFlutter },
+    ],
+  },
+  {
+    title: "AI & Data Science",
+    icon: Brain,
+    accent: "violet",
+    span: "md:col-span-3",
+    skills: [
+      { name: "Python", icon: FaPython },
+      { name: "PyTorch", icon: SiPytorch },
+      { name: "Machine Learning", icon: Brain },
+    ],
+  },
+  {
+    title: "Data & Infrastructure",
+    icon: Database,
+    accent: "amber",
+    span: "md:col-span-3",
+    skills: [
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "SQL", icon: Database },
+      { name: "Docker", icon: FaDocker },
+      { name: "Linux", icon: FaLinux },
+    ],
+  },
+];
+
+const accentStyles: Record<
+  string,
+  { iconWrap: string; icon: string; chip: string; chipHover: string }
+> = {
+  emerald: {
+    iconWrap: "bg-emerald-400/15 border-emerald-300/30",
+    icon: "text-emerald-300",
+    chip: "bg-emerald-400/10 border-emerald-300/20 text-emerald-100",
+    chipHover: "hover:bg-emerald-400/20 hover:border-emerald-300/40",
+  },
+  blue: {
+    iconWrap: "bg-sky-400/15 border-sky-300/30",
+    icon: "text-sky-300",
+    chip: "bg-sky-400/10 border-sky-300/20 text-sky-100",
+    chipHover: "hover:bg-sky-400/20 hover:border-sky-300/40",
+  },
+  violet: {
+    iconWrap: "bg-violet-400/15 border-violet-300/30",
+    icon: "text-violet-300",
+    chip: "bg-violet-400/10 border-violet-300/20 text-violet-100",
+    chipHover: "hover:bg-violet-400/20 hover:border-violet-300/40",
+  },
+  amber: {
+    iconWrap: "bg-amber-400/15 border-amber-300/30",
+    icon: "text-amber-300",
+    chip: "bg-amber-400/10 border-amber-300/20 text-amber-100",
+    chipHover: "hover:bg-amber-400/20 hover:border-amber-300/40",
+  },
 };
+
+const certificates = [
+  {
+    title: "AI Fluency: Framework & Foundations",
+    issuer: "Anthropic",
+    date: "Issued Aug 2025",
+    link: "https://verify.skilljar.com/c/o5kucjkssxry", 
+    icon: Award,
+  },
+  {
+    title: "Introduction to Model Context Protocol",
+    issuer: "Anthropic",
+    date: "Issued Aug 2025",
+    link: "https://verify.skilljar.com/c/g8bu8pew6n9d", 
+    icon: Award,
+  },
+  {
+    title: "Model Context Protocol Advanced Topics",
+    issuer: "Anthropic",
+    date: "Issued Aug 2025",
+    link: "https://verify.skilljar.com/c/dk85q9wwv6fs",
+    icon: Award,
+  },
+];
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+    <section id="skills" className="py-20 relative bg-[#064E3B] overflow-hidden">
+      <div className="relative container mx-auto px-4 max-w-5xl">
+        <div className="text-center mb-12">
+          <h2 className="font-heading font-bold text-4xl md:text-5xl tracking-tight text-white mb-4">
+            Technical Expertise
+          </h2>
+          <p className="text-emerald-100/70 text-base max-w-xl mx-auto">
+            Technologies and tools I specialize in to build scalable backend systems,
+            mobile applications, and intelligent solutions.
+          </p>
+        </div>
 
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12">
-          <div className="animate-fade-in-up">
-            <div className="text-center">
-              <h2 className="font-heading font-bold text-5xl md:text-6xl mb-6 gradient-text">Skills</h2>
-              <div className="space-y-6 text-lg leading-relaxed max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
+          {skillCategories.map((category, index) => {
+            const CategoryIcon = category.icon;
+            const style = accentStyles[category.accent];
+            return (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                whileHover={{ y: -6 }}
+                className={`relative ${category.span} col-span-1 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-md shadow-lg hover:bg-white/[0.09] hover:border-white/25 transition-all duration-300 p-7 md:p-8 overflow-hidden`}
+              >
+                <div className="relative flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                  <div className={`p-2.5 rounded-full border ${style.iconWrap}`}>
+                    <CategoryIcon className={`w-5 h-5 ${style.icon}`} />
+                  </div>
+                  <h3 className="font-heading font-semibold text-xl tracking-tight text-white">
+                    {category.title}
+                  </h3>
                 </div>
-            </div>
 
-            {/* --- THIS IS THE MODIFIED LINE --- */}
-            <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 auto-rows-fr">
-              {Object.entries(technicalSkills).map(([category, skills], index) => {
-                const isLeftSide = index < 3;
-
-                return (
-                  <HolographicCard
-                    key={category}
-                    intensity="medium"
-                    className={`p-6 flex flex-col transition-all duration-300 h-full ${
-                      isLeftSide
-                        ? "lg:scale-110 lg:transform-gpu lg:z-10 lg:shadow-2xl lg:shadow-primary/20"
-                        : "lg:scale-95 lg:opacity-90"
-                    }`}
-                  >
-                    <h3 className="font-heading font-semibold text-xl mb-6 text-primary flex-shrink-0">
-                      {category}
-                    </h3>
-                    <div className="flex-grow">
-                      {Array.isArray(skills) && typeof skills[0] === "object" ? (
-                        <ul className="space-y-3">
-                          {(
-                            skills as {
-                              name: string;
-                              icon: React.ElementType;
-                            }[]
-                          ).map((skill) => (
-                            <li
-                              key={skill.name}
-                              className="flex items-center gap-3"
-                            >
-                              <skill.icon className="text-accent" size={20} />
-                              <span className="font-body text-sm text-muted-foreground">
-                                {skill.name}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <div className="flex flex-wrap gap-2">
-                          {(skills as string[]).map((skill) => (
-                            <Badge
-                              key={skill}
-                              variant="secondary"
-                              className="font-body text-xs hover:bg-primary/20 transition-colors neon-border hover-lift"
-                            >
-                              {skill}
-                            </Badge>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </HolographicCard>
-                );
-              })}
-            </div>
-          </div>
+                <div className="relative flex flex-wrap gap-2.5">
+                  {category.skills.map((skill, skillIndex) => {
+                    const SkillIcon = skill.icon;
+                    return (
+                      <motion.div
+                        key={skill.name}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: index * 0.08 + skillIndex * 0.04 }}
+                        whileHover={{ scale: 1.06 }}
+                        className={`flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-mono transition-all duration-200 ${style.chip} ${style.chipHover}`}
+                      >
+                        <SkillIcon className={`w-4 h-4 ${style.icon}`} />
+                        <span>{skill.name}</span>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

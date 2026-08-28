@@ -7,10 +7,7 @@ export function CyberGrid() {
       <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: `
-            linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px)
-          `,
+          backgroundColor: "rgba(39, 39, 42, 0.35)",
           backgroundSize: "50px 50px",
         }}
       />
@@ -20,7 +17,7 @@ export function CyberGrid() {
         {Array.from({ length: 3 }).map((_, i) => (
           <div
             key={i}
-            className="absolute h-px bg-gradient-to-r from-transparent via-primary to-transparent animate-cyber-scan"
+            className="absolute h-px bg-zinc-500 animate-cyber-scan"
             style={{
               top: `${20 + i * 30}%`,
               width: "100%",

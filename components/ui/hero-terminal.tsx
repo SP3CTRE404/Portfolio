@@ -17,13 +17,13 @@ export function HeroTerminal() {
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto rounded-xl shadow-2xl bg-zinc-900 neonborder backdrop-blur-sm border border-zinc-700">
+    <div className="w-full max-w-lg mx-auto rounded-t-[3rem] rounded-b-2xl bg-stone-900 border border-stone-200/60 overflow-hidden">
       {/* Code Editor Header */}
-      <div className="flex items-center p-3 border-b border-gray-700">
+      <div className="flex items-center p-3 border-b border-stone-700">
         <div className="h-3 w-3 rounded-full bg-red-500 mr-2"></div>
         <div className="h-3 w-3 rounded-full bg-yellow-500 mr-2"></div>
         <div className="h-3 w-3 rounded-full bg-green-500"></div>
-        <div className="ml-4 px-3 py-1 text-xs font-mono text-gray-300 bg-gray-800 rounded-md">
+        <div className="ml-4 px-3 py-1 text-xs font-mono text-stone-300 bg-stone-800 rounded-full">
           developer.cpp
         </div>
       </div>

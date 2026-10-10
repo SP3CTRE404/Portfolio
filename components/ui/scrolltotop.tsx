@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { ChevronUp } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { SpecularButton } from "@/components/ui/specular-button"
 import { cn } from "@/lib/utils"
 
 export function ScrollToTopButton() {
@@ -37,16 +37,21 @@ export function ScrollToTopButton() {
   }, [])
 
   return (
-    <Button
-      size="icon"
-      onClick={scrollToTop}
+    <div
       className={cn(
-        "fixed bottom-8 right-8 z-50 rounded-full transition-opacity duration-300",
-        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+        "fixed bottom-8 right-8 z-50 transition-all duration-300",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       )}
-      aria-label="Scroll to top"
     >
-      <ChevronUp className="h-6 w-6" />
-    </Button>
+      <SpecularButton
+        size="sm"
+        radius={9999}
+        className="!w-12 !h-12 !p-0 flex items-center justify-center rounded-full"
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+      >
+        <ChevronUp className="h-6 w-6 text-zinc-300" />
+      </SpecularButton>
+    </div>
   )
 }

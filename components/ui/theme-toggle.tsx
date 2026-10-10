@@ -28,7 +28,7 @@ export function ThemeToggle({ className, showLabel = false }: ThemeToggleProps) 
       case "light":
         return <Sun size={16} className="text-amber-600 transition-transform duration-300 group-hover:rotate-45" />
       case "dark":
-        return <Moon size={16} className="text-emerald-700 transition-transform duration-300 group-hover:-rotate-12" />
+        return <Moon size={16} className="text-zinc-200 transition-transform duration-300 group-hover:-rotate-12" />
       case "system":
         return <Monitor size={16} className="text-stone-600 transition-transform duration-300 group-hover:scale-105" />
       default:

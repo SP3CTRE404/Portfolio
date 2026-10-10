@@ -33,35 +33,34 @@ const handleScrollTo = (sectionId: string) => {
   onSectionChange(sectionId);
 };
 
-return (
-<div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-full border border-white/25 bg-white/10 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
-<nav className="px-3 py-2 rounded-full">
-<ul className="flex items-center justify-center gap-2">
-{navItems.map((item) => {
-  const isActive = 
-    activeSection === item.id ||
-    (item.id === "skills" && activeSection === "certificates") ||
-    (item.id === "experience" && activeSection === "education");
-
   return (
-    <li key={item.id}>
-      <button
-        onClick={() => handleScrollTo(item.id)}
-        className={cn(
-          "flex items-center gap-2 px-4 py-2 rounded-full font-body text-sm font-medium transition-colors duration-200",
-          isActive
-            ? "bg-emerald-500 text-white"
-            : "text-white/80 hover:bg-white/15 hover:text-white"
-        )}
-      >
-        <item.icon className="h-4 w-4" />
-        <span>{item.label}</span>
-      </button>
-    </li>
-  );
-})}
-</ul>
-</nav>
-</div>
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-full neu-nav-bar p-1.5">
+      <nav className="rounded-full">
+        <ul className="flex items-center justify-center gap-1.5 sm:gap-2">
+          {navItems.map((item) => {
+            const isActive = 
+              activeSection === item.id ||
+              (item.id === "experience" && activeSection === "education");
+
+            return (
+              <li key={item.id}>
+                <button
+                  onClick={() => handleScrollTo(item.id)}
+                  className={cn(
+                    "flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full font-body text-xs sm:text-sm font-medium transition-all duration-200",
+                    isActive
+                      ? "neu-nav-active font-semibold"
+                      : "neu-nav-inactive"
+                  )}
+                >
+                  <item.icon className={cn("h-3.5 w-3.5 sm:h-4 sm:w-4", isActive ? "text-white" : "text-zinc-400")} />
+                  <span>{item.label}</span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </div>
   );
 }

@@ -2,76 +2,96 @@
 @import "tw-animate-css";
 
 :root {
-  /* Updated to futuristic dark mode color tokens */
-  --background: #064e3b;
-  --foreground: #f5f5f4;
-  --card: #fffdf9;
-  --card-foreground: #292524;
-  --popover: #fffdf9;
-  --popover-foreground: #292524;
-  --primary: #10b981;
-  --primary-foreground: #ffffff;
-  --secondary: #e7e5e4;
-  --secondary-foreground: #44403c;
-  --muted: #f0ede8;
-  --muted-foreground: #78716c;
-  --accent: #10b981;
+  /* Futuristic dark neutral neumorphism tokens */
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --card: #13141b;
+  --card-foreground: #f4f4f5;
+  --popover: #13141b;
+  --popover-foreground: #f4f4f5;
+  --primary: #ffffff;
+  --primary-foreground: #09090b;
+  --secondary: #1a1c26;
+  --secondary-foreground: #f4f4f5;
+  --muted: #0d0e13;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
   --accent-foreground: #ffffff;
-  --destructive: #be123c;
+  --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e7e5e4;
-  --input: #fffdf9;
-  --ring: #10b981;
-  --chart-1: #4c51bf;
-  --chart-2: #68d391;
-  --chart-3: #f6e05e;
-  --chart-4: #fc8181;
-  --chart-5: #4fd1c5;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: #0d0e13;
+  --ring: #a1a1aa;
+  --chart-1: #6366f1;
+  --chart-2: #8b5cf6;
+  --chart-3: #ec4899;
+  --chart-4: #f43f5e;
+  --chart-5: #38bdf8;
   --radius: 0.75rem;
-  --sidebar: #064e3b;
-  --sidebar-foreground: #f5f5f4;
-  --sidebar-primary: #10b981;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #ecfdf5;
-  --sidebar-accent-foreground: #065f46;
-  --sidebar-border: #e7e5e4;
-  --sidebar-ring: #10b981;
+  --sidebar: #09090b;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #09090b;
+  --sidebar-accent: #1a1c26;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: #a1a1aa;
+
+  /* Neumorphic specific dark tokens */
+  --neu-bg: #09090b;
+  --neu-surface: #13141b;
+  --neu-surface-sunken: #0c0d12;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.78);
+  --neu-shadow-dark-subtle: rgba(0, 0, 0, 0.55);
+  --neu-shadow-light: rgba(255, 255, 255, 0.06);
+  --neu-shadow-light-subtle: rgba(255, 255, 255, 0.035);
+  --neu-shadow-light-glow: rgba(255, 255, 255, 0.12);
+  --neu-border: rgba(255, 255, 255, 0.08);
 }
 
 .dark {
-  /* Enhanced dark mode tokens for futuristic look */
-  --background: #064e3b;
-  --foreground: #f5f5f4;
-  --card: #fffdf9;
-  --card-foreground: #292524;
-  --popover: #fffdf9;
-  --popover-foreground: #292524;
-  --primary: #10b981;
-  --primary-foreground: #ffffff;
-  --secondary: #e7e5e4;
-  --secondary-foreground: #44403c;
-  --muted: #f0ede8;
-  --muted-foreground: #78716c;
-  --accent: #10b981;
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --card: #13141b;
+  --card-foreground: #f4f4f5;
+  --popover: #13141b;
+  --popover-foreground: #f4f4f5;
+  --primary: #ffffff;
+  --primary-foreground: #09090b;
+  --secondary: #1a1c26;
+  --secondary-foreground: #f4f4f5;
+  --muted: #0d0e13;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
   --accent-foreground: #ffffff;
-  --destructive: #dc2626;
+  --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e7e5e4;
-  --input: #fffdf9;
-  --ring: #10b981;
-  --chart-1: #4c51bf;
-  --chart-2: #68d391;
-  --chart-3: #f6e05e;
-  --chart-4: #fc8181;
-  --chart-5: #4fd1c5;
-  --sidebar: #064e3b;
-  --sidebar-foreground: #f5f5f4;
-  --sidebar-primary: #10b981;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #ecfdf5;
-  --sidebar-accent-foreground: #065f46;
-  --sidebar-border: #e7e5e4;
-  --sidebar-ring: #10b981;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: #0d0e13;
+  --ring: #a1a1aa;
+  --chart-1: #6366f1;
+  --chart-2: #8b5cf6;
+  --chart-3: #ec4899;
+  --chart-4: #f43f5e;
+  --chart-5: #38bdf8;
+  --sidebar: #09090b;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #09090b;
+  --sidebar-accent: #1a1c26;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: #a1a1aa;
+
+  --neu-bg: #09090b;
+  --neu-surface: #13141b;
+  --neu-surface-sunken: #0c0d12;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.78);
+  --neu-shadow-dark-subtle: rgba(0, 0, 0, 0.55);
+  --neu-shadow-light: rgba(255, 255, 255, 0.06);
+  --neu-shadow-light-subtle: rgba(255, 255, 255, 0.035);
+  --neu-shadow-light-glow: rgba(255, 255, 255, 0.12);
+  --neu-border: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
@@ -111,7 +131,6 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  /* Updated font variables for DM Sans */
   --font-heading: Georgia, serif;
   --font-body: "DM Sans", sans-serif;
 }
@@ -127,6 +146,284 @@
   html {
     scroll-behavior: smooth;
   }
+}
+
+/* ==========================================================================
+   NEUMORPHISM (SOFT UI) SYSTEM - DARK OBSIDIAN / ZINC THEME
+   ========================================================================== */
+
+/* Raised Neumorphic Card */
+.neu-card {
+  background: #12131a;
+  background-image: linear-gradient(145deg, #171822, #0d0e14);
+  box-shadow: 10px 10px 28px var(--neu-shadow-dark),
+              -8px -8px 24px var(--neu-shadow-light);
+  border: 1px solid var(--neu-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-card:hover {
+  box-shadow: 14px 14px 36px var(--neu-shadow-dark),
+              -10px -10px 30px var(--neu-shadow-light-glow);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Neumorphic Card for Zoom & Displace Interaction (no highlight borders/glow) */
+.neu-card-zoom {
+  background: #12131a;
+  background-image: linear-gradient(145deg, #171822, #0d0e14);
+  box-shadow: 10px 10px 28px var(--neu-shadow-dark),
+              -8px -8px 24px var(--neu-shadow-light);
+  border: 1px solid var(--neu-border);
+  will-change: transform;
+}
+
+/* Interactive Neumorphic Card */
+.neu-card-interactive {
+  background: #12131a;
+  background-image: linear-gradient(145deg, #171822, #0d0e14);
+  box-shadow: 8px 8px 22px var(--neu-shadow-dark),
+              -7px -7px 20px var(--neu-shadow-light);
+  border: 1px solid var(--neu-border);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-card-interactive:hover {
+  box-shadow: 12px 12px 28px var(--neu-shadow-dark),
+              -9px -9px 26px var(--neu-shadow-light-glow);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.neu-card-interactive:active {
+  box-shadow: inset 4px 4px 10px var(--neu-shadow-dark),
+              inset -4px -4px 10px var(--neu-shadow-light);
+  transform: translateY(0);
+}
+
+/* Deck Card (Sticky Projects Deck) */
+.neu-card-deck {
+  background: #13141b;
+  background-image: linear-gradient(145deg, #181923, #0e0f15);
+  box-shadow: 14px 14px 36px rgba(0, 0, 0, 0.85),
+              -10px -10px 32px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-card-deck:hover {
+  box-shadow: 18px 18px 44px rgba(0, 0, 0, 0.95),
+              -12px -12px 38px rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Flat Neumorphic Surface */
+.neu-flat {
+  background: #12131a;
+  box-shadow: 6px 6px 16px var(--neu-shadow-dark),
+              -6px -6px 16px var(--neu-shadow-light);
+  border: 1px solid var(--neu-border);
+}
+
+/* Inset / Sunken Well (For Inputs, Active Items, Wells) */
+.neu-inset {
+  background: #0a0b0f;
+  box-shadow: inset 5px 5px 12px var(--neu-shadow-dark),
+              inset -5px -5px 12px var(--neu-shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.neu-inset-subtle {
+  background: rgba(12, 13, 18, 0.75);
+  box-shadow: inset 3px 3px 8px var(--neu-shadow-dark),
+              inset -3px -3px 8px var(--neu-shadow-light-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Tactile Raised Button */
+.neu-btn {
+  background: #14151d;
+  background-image: linear-gradient(145deg, #1a1c27, #0f1015);
+  box-shadow: 5px 5px 14px var(--neu-shadow-dark),
+              -5px -5px 14px var(--neu-shadow-light);
+  border: 1px solid var(--neu-border);
+  color: #f4f4f5;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-btn:hover {
+  box-shadow: 7px 7px 20px var(--neu-shadow-dark),
+              -7px -7px 20px var(--neu-shadow-light-glow);
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.neu-btn:active,
+.neu-btn[data-state="active"],
+.neu-btn.active {
+  box-shadow: inset 4px 4px 10px var(--neu-shadow-dark),
+              inset -4px -4px 10px var(--neu-shadow-light);
+  background-image: linear-gradient(145deg, #0f1015, #1a1c27);
+  transform: translateY(1px);
+}
+
+/* Primary Neumorphic Button - Crisp Stark White with Dark Depth */
+.neu-btn-primary {
+  background: linear-gradient(145deg, #ffffff, #e4e4e7);
+  color: #09090b !important;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.8),
+              -5px -5px 16px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-btn-primary:hover {
+  box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.9),
+              -7px -7px 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.neu-btn-primary:active {
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.35),
+              inset -4px -4px 10px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(145deg, #e4e4e7, #d4d4d8);
+  transform: translateY(1px);
+}
+
+/* Circular Icon Button */
+.neu-btn-icon {
+  background: #14151d;
+  background-image: linear-gradient(145deg, #1a1c27, #0f1015);
+  box-shadow: 4px 4px 12px var(--neu-shadow-dark),
+              -4px -4px 12px var(--neu-shadow-light);
+  border: 1px solid var(--neu-border);
+  color: #d4d4d8;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-btn-icon:hover {
+  box-shadow: 6px 6px 16px var(--neu-shadow-dark),
+              -6px -6px 16px var(--neu-shadow-light-glow);
+  transform: translateY(-1px);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.neu-btn-icon:active {
+  box-shadow: inset 3px 3px 8px var(--neu-shadow-dark),
+              inset -3px -3px 8px var(--neu-shadow-light);
+  background-image: linear-gradient(145deg, #0f1015, #1a1c27);
+  transform: translateY(1px);
+}
+
+/* Inset Form Inputs */
+.neu-input {
+  background-color: #0b0c10 !important;
+  color: #f4f4f5 !important;
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.8),
+              inset -4px -4px 10px rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  transition: all 0.25s ease !important;
+}
+
+.neu-input:focus {
+  box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.9),
+              inset -4px -4px 12px rgba(255, 255, 255, 0.08),
+              0 0 0 2px rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  outline: none !important;
+}
+
+/* Pills & Chips */
+.neu-chip {
+  background: #14151d;
+  background-image: linear-gradient(145deg, #191b25, #0f1015);
+  box-shadow: 3px 3px 8px var(--neu-shadow-dark),
+              -3px -3px 8px var(--neu-shadow-light);
+  border: 1px solid var(--neu-border);
+  color: #e4e4e7;
+  transition: all 0.2s ease;
+}
+
+.neu-chip:hover {
+  box-shadow: 4px 4px 12px var(--neu-shadow-dark),
+              -4px -4px 12px var(--neu-shadow-light-glow);
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.neu-chip-inset {
+  background: #0b0c10;
+  box-shadow: inset 2px 2px 6px var(--neu-shadow-dark),
+              inset -2px -2px 6px var(--neu-shadow-light-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #d4d4d8;
+}
+
+/* Icon Pods */
+.neu-icon-pod {
+  background: #14151d;
+  background-image: linear-gradient(145deg, #191b25, #0f1015);
+  box-shadow: 4px 4px 10px var(--neu-shadow-dark),
+              -4px -4px 10px var(--neu-shadow-light);
+  border: 1px solid var(--neu-border);
+}
+
+.neu-icon-pod-inset {
+  background: #0b0c10;
+  box-shadow: inset 3px 3px 8px var(--neu-shadow-dark),
+              inset -3px -3px 8px var(--neu-shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Multi-layered Neumorphic Frame */
+.neu-frame {
+  background: #13141b;
+  box-shadow: 14px 14px 34px rgba(0, 0, 0, 0.85),
+              -10px -10px 28px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.neu-frame-inner {
+  background: #0b0c10;
+  box-shadow: inset 5px 5px 12px rgba(0, 0, 0, 0.85),
+              inset -5px -5px 12px rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Floating Navigation Bar */
+.neu-nav-bar {
+  background: rgba(18, 19, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 10px 10px 28px rgba(0, 0, 0, 0.8),
+              -6px -6px 20px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.neu-nav-active {
+  background: #090a0d !important;
+  color: #ffffff !important;
+  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.85),
+              inset -3px -3px 8px rgba(255, 255, 255, 0.08),
+              0 0 12px rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.neu-nav-inactive {
+  color: rgba(244, 244, 245, 0.7);
+  transition: all 0.2s ease;
+}
+
+.neu-nav-inactive:hover {
+  background: rgba(25, 27, 36, 0.7);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5),
+              -3px -3px 8px rgba(255, 255, 255, 0.04);
+  color: #ffffff;
 }
 
 /* Enhanced futuristic animations and effects */

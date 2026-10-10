@@ -33,7 +33,7 @@ export function TypingAnimation({ text, className, speed = 70, showCursor = true
       <span>{displayText}</span>
       {showCursor && (
         <span
-          className="inline-block w-[2.5px] h-[1.15em] bg-emerald-600 ml-1 rounded-full animate-pulse shrink-0"
+          className="inline-block w-[2.5px] h-[1.15em] bg-zinc-300 ml-1 rounded-full animate-pulse shrink-0"
           aria-hidden="true"
         />
       )}
